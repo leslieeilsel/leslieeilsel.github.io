@@ -1,11 +1,11 @@
 <html>
 <head>
-    <meta charset="utf-8" />
+  <meta charset="utf-8" />
 <meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="all,follow">
 <meta name="googlebot" content="index,follow,snippet,archive">
-<title>Leslie Lau&#39;s Blog</title>
+<title>Windows安装npm及cnpm | Leslie Lau&#39;s Blog</title>
 <link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1563249363319">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://leslieeilsel.github.io/styles/main.css" type='text/css' media='all'>
@@ -18,10 +18,10 @@
 
 
 </head>
-    <body class="post-template-default single single-post single-format-standard ct-body singular singular-post not-front standard">
-        <div id="overflow-container" class="overflow-container">
-            <a class="skip-content" href="#main">Skip to content</a>
-                <header id="site-header" class="site-header" role="banner">
+<body class="home blog ct-body standard">
+<div id="overflow-container" class="overflow-container">
+  <a class="skip-content" href="#main">Skip to content</a>
+  <header id="site-header" class="site-header" role="banner">
     <div class='top-navigation top-navigation-important'>
         <div class='container'>
             <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
@@ -121,79 +121,147 @@
 </header>
 
 
-                
+  <div id="main" class="main" role="main">
+    <div id="loop-container" class="loop-container">
+      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
+        
+          <div class='featured-image lazy lazy-bg-image' data-background="https://images.unsplash.com/photo-1543966888-7c1dc482a810?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1381&amp;q=80">
+          </div>
+        
 
-<div class="main">
-    <div class="main-content">
-        <div id="timeline-container">
-            <div id="timeline">
-                
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-    <!--                    <img src="assets/images/star.svg" alt="2019">-->
-                        <span>2019</span>
-                    </div>
-                    
-                    
-                        <div class="timeline-content">
-                            <h3 class="timeline-title"> 为什么叫金丝雀版本</h3>
-                            <p>
-                                
-                            </p>
-                            <a href="https://leslieeilsel.github.io/post/why-canary" class="btn">review</a>
-                        </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                </div>
-                 
-                <div class="timeline-item">
-                    <div class="timeline-icon">
-    <!--                    <img src="assets/images/star.svg" alt="2018">-->
-                        <span>2018</span>
-                    </div>
-                    
-                    
-                    
-                    
-                        <div class="timeline-content">
-                            <h3 class="timeline-title"> 修改照片EXIF信息</h3>
-                            <p>
-                                
-                            </p>
-                            <a href="https://leslieeilsel.github.io/post/edit-exif-info" class="btn">review</a>
-                        </div>
-                    
-                    
-                    
-                        <div class="timeline-content">
-                            <h3 class="timeline-title"> Windows安装npm及cnpm</h3>
-                            <p>
-                                
-                            </p>
-                            <a href="https://leslieeilsel.github.io/post/windows-install-npm-cnpm" class="btn">review</a>
-                        </div>
-                    
-                    
-                </div>
-                 
-            </div>
+        <div class="entry-meta">
+          <span class="date">· 2018-11-07 ·</span> <span> / </span>
+          <span class="author">
+            <a href="https://leslieeilsel.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></a>
+          </span>
+          
+            <span class="category">
+                    <span> / </span>
+                    <a href="https://leslieeilsel.github.io/tag/tPH6NX_XC">前端</a>
+                </span>
+          
         </div>
-    </div>
-</div>
+        <div class='entry-header'>
+          <h1 class='entry-title'>Windows安装npm及cnpm</h1>
+        </div>
+        <div class="entry-container">
+          <div class="entry-content">
+            <article>
+              <h3 id="工具官网">工具官网</h3>
+<p>Node.js : http://nodejs.cn/<br>
+淘宝NPM: https://npm.taobao.org/</p>
+<h3 id="安装步骤">安装步骤</h3>
+<h4 id="一-安装nodejs">一、安装node.js</h4>
+<ol>
+<li>前往node.js官网下载并安装工具，这里安装路径选到D盘，D:\Program Files\nodejs。<br>
+安装完毕在命令行输入以下命令测试是否安装成功，正确会出现版本号：</li>
+</ol>
+<pre><code class="language-shell">  npm -v
+</code></pre>
+<ol start="2">
+<li>改变原有的环境变量</li>
+</ol>
+<ul>
+<li>我们要先配置npm的全局模块的存放路径以及cache的路径，例如我希望将以上两个文件夹放在NodeJS的主目录下，便在NodeJs下建立&quot;node_global&quot;及&quot;node_cache&quot;两个文件夹，输入以下命令改变npm配置：</li>
+</ul>
+<pre><code class="language-shell">npm config set prefix &quot;D:\Program Files\nodejs\node_global&quot;
+npm config set cache &quot;D:\Program Files\nodejs\node_cache&quot;
+</code></pre>
+<ul>
+<li>
+<p>在系统环境变量添加系统变量NODE_PATH，输入路径D:\Program Files\nodejs\node_global\node_modules，此后所安装的模块都会安装到改路径下 。</p>
+</li>
+<li>
+<p>在命令行输入以下命令试着安装express（注：“-g”这个参数意思是装到global目录下，也就是上面说设置的“D:\Program Files\nodejs\node_global”里面。）</p>
+</li>
+</ul>
+<pre><code class="language-shell">npm install express -g
+</code></pre>
+<p>安装完毕后可以看到.\node_global\node_modules\express 已经有内容。</p>
+<ul>
+<li>在命令行输入node进入编辑模式，输入以下代码测试是否能正常加载模块：</li>
+</ul>
+<pre><code class="language-shell">require('express')
+</code></pre>
+<p>假设成功，可以看到有输出。假设出错，检查NODE_PATH的路径。</p>
+<h4 id="二-安装淘宝npmcnpm">二、安装淘宝npm（cnpm）</h4>
+<ol>
+<li>输入以下命令</li>
+</ol>
+<pre><code class="language-shell">npm install -g cnpm --registry=https://registry.npm.taobao.org
+</code></pre>
+<ol start="2">
+<li>输入cnpm -v输入是否正常，这里肯定会出错。</li>
+</ol>
+<pre><code class="language-shell">cnpm -v
+</code></pre>
+<ol start="3">
+<li>添加系统变量path的内容<br>
+　　因为cnpm会被安装到D:\Program Files\nodejs\node_global下，而系统变量path并未包含该路径。在系统变量path下添加该路径即可正常使用cnpm。</li>
+</ol>
 
-                <nav class="navigation pagination" role="navigation">
-    <h2 class="screen-reader-text">Posts navigation</h2>
-    <div class="nav-links">
+            </article>
+          </div>
+          <div class='entry-meta-bottom'>
+            <div class="entry-categories">
+              <p>
+                <span>Categories</span>
+                
+                  
+                    
+                  <a href="https://leslieeilsel.github.io/tag/9VeonMiLQ" title="View all posts in 拓展">拓展</a>
+                    
+                    
+                    
+                  <a href="https://leslieeilsel.github.io/tag/c4stoRMHc" title="View all posts in life">life</a>
+                    
+                    
+                    
+                  <a href="https://leslieeilsel.github.io/tag/tPH6NX_XC" title="View all posts in 前端">前端</a>
+                    
+                    
+              </p>
+            </div>
+            <div class="entry-tags">
+              <p><span>Tags</span>
+              </p>
+            </div>
+          </div>
+          <div class="author-meta">
+            <div class="author">
+              <img alt='' src="https://leslieeilsel.github.io/images/avatar.png?v=1563249363319" class='avatar avatar-72 photo' height='72' width='72'>
+              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://leslieeilsel.github.io'></a> </span>
+            </div>
+            <div class="bio">
+              <p></p>
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+                
+              
+            </div>
+          </div>
+        </div>
+          
+      </div>
+      <section id="comments" class="comments">
         
-        
+      </section>
     </div>
-</nav>
-
-                <footer id="site-footer" class="site-footer" role="contentinfo">
+  </div>
+  <footer id="site-footer" class="site-footer" role="contentinfo">
     <h1>
         <a href="https://leslieeilsel.github.io"> Leslie Lau&#39;s Blog </a>
     </h1>
@@ -234,6 +302,7 @@
 <script src="https://leslieeilsel.github.io/media/scripts/lib/jquerymigrate.js"></script>
 <script src="https://leslieeilsel.github.io/media/scripts/lib/production.min.js"></script>
 
-        </div>
-    </body>
+</div>
+</body>
 </html>
+

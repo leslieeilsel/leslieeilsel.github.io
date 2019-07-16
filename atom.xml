@@ -1,45 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leslieeilsel.github.io</id>
-    <title>Gridea</title>
-    <updated>2019-07-16T03:02:45.227Z</updated>
+    <title>Leslie Lau&apos;s Blog</title>
+    <updated>2019-07-16T03:18:41.145Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leslieeilsel.github.io"/>
     <link rel="self" href="https://leslieeilsel.github.io/atom.xml"/>
-    <subtitle>温故而知新</subtitle>
+    <subtitle>念念不忘，必有回响</subtitle>
     <logo>https://leslieeilsel.github.io/images/avatar.png</logo>
     <icon>https://leslieeilsel.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, Gridea</rights>
+    <rights>All rights reserved 2019, Leslie Lau&apos;s Blog</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://leslieeilsel.github.io/post/hello-gridea</id>
-        <link href="https://leslieeilsel.github.io/post/hello-gridea">
+        <title type="html"><![CDATA[修改照片的EXIF信息]]></title>
+        <id>https://leslieeilsel.github.io/post/edit-exif-info</id>
+        <link href="https://leslieeilsel.github.io/post/edit-exif-info">
         </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="http://hvenotes.fehey.com/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>𝖶𝗂𝗇𝖽𝗈𝗐𝗌</strong> 或 <strong>𝖬𝖺𝖼𝖮𝖲</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2018-11-18T08:37:48.000Z</updated>
+        <content type="html"><![CDATA[<h4 id="背景">背景</h4>
+<ul>
+<li>
+<p>不得不说，在众多<a href="https://itunes.apple.com/cn/app/nomo-%E7%9B%B8%E6%9C%BA-%E4%BD%A0%E7%9A%84%E6%8B%8D%E7%AB%8B%E5%BE%97/id1362548649?mt=8">NOMO相机</a>里，135 Ti是我最喜欢的。</p>
+<p>135 Ti相机截图：<br>
+<img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/MuvDy.wO9jIDP0NBcZerd13AjG.wA.cI2fVF6LpTcsI!/r/dGcBAAAAAAAA" alt="shot"><br>
+效果图：</p>
+<p><img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/*UQhTC4zut6EDGByy*oDkOK8Y*IhQeiiIZHu0TAM.Cc!/r/dFIBAAAAAAAA" alt="120101"><br>
+135 Ti的成片可以在右下角显示当前拍摄日期。</p>
+</li>
+<li>
+<p>NOMO PRO会员有专属的导入照片功能，可以将任意照片加上NOMO的胶片风格。</p>
+</li>
+</ul>
+<h4 id="问题">问题</h4>
+<p>2018年10月20日，使用单反相机拍摄的照片，导入电脑后发现拍摄日期是2012-01-01（可能是相机日期设置的问题），右键查看属性，然后手动将修改拍摄时间改成2018年10月20日。</p>
+<p><img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/lXs47hbdGGtSlB4.wYt3yEeJGEaxW9Be9*vGiUzFOD8!/r/dEkBAAAAAAAA" alt=""><br>
+拍摄时间修改完之后，点击保存，照片的修改时间也会发生变化。<br>
+但是，修改了之后，用NOMO相机导入这张照片，发现照片上的时间还是2012-01-01，很明显不对。</p>
+<h4 id="问题解决">问题解决</h4>
+<p>后来借助专业软件来修改EXIF信息，我使用的是<a href="http://www.magicexif.com/">MagicEXIF</a>。<br>
+在MagicEXIF中打开照片，这里有三个时间参数：</p>
+<pre><code class="language-reStructuredText">修改时间
+拍摄时间
+数字化时间
+</code></pre>
+<p>发现<strong>主图像信息</strong>中的修改时间还是2012-01-01。额。<br>
+<img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/zinwmd2EqRLK8dk98XjMkF6uJuAJW2nxw1yx4dUqtnE!/r/dFQBAAAAAAAA" alt=""><br>
+仔细想想，EXIF信息中的修改时间和在照片右键属性中的修改时间是有区别的。</p>
+<p>EXIF信息可以抽象的理解是照片的内部属性，而在右键属性中的修改的内容是照片的外部属性。</p>
+<p>NOMO相机内置的算法抽取的应该就是照片的内部属性，所以修改外部属性是不起作用的。</p>
+<p>好啦！问题找到了，在MagicEXIF中将修改时间改成2018-10-20，然后保存。再次使用NOMO导入照片，Duang，时间显示正常啦。</p>
+<h4 id="最终成片">最终成片</h4>
+<p><img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/aAC9SeXklkpwe0rh2NNFRd47F4XQdiWIpmvR*YZNnkc!/r/dFUAAAAAAAAA" alt=""></p>
+<h5 id="2018-10-20我们迎风环绕洱海一周遇见无数美丽风景时间定格的时刻你才是我最美">2018-10-20，我们迎风环绕洱海一周，遇见无数美丽风景，时间定格的时刻，你才是我最美。</h5>
 ]]></content>
     </entry>
 </feed>

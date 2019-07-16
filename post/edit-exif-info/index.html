@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>修改照片的EXIF信息 | Leslie Lau&#39;s Blog</title>
+<meta name="description" content="念念不忘，必有回响">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1563247118134">
+<link rel="stylesheet" href="https://leslieeilsel.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://leslieeilsel.github.io">
+        <img src="https://leslieeilsel.github.io/images/avatar.png?v=1563247118134" class="site-logo">
+        <h1 class="site-title">Leslie Lau&#39;s Blog</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      念念不忘，必有回响
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">修改照片的EXIF信息</h2>
+            <div class="post-date">2018-11-18</div>
+            
+              <div class="feature-container" style="background-image: url('http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/aAC9SeXklkpwe0rh2NNFRd47F4XQdiWIpmvR*YZNnkc!/r/dFUAAAAAAAAA')">
+              </div>
+            
+            <div class="post-content">
+              <h4 id="背景">背景</h4>
+<ul>
+<li>
+<p>不得不说，在众多<a href="https://itunes.apple.com/cn/app/nomo-%E7%9B%B8%E6%9C%BA-%E4%BD%A0%E7%9A%84%E6%8B%8D%E7%AB%8B%E5%BE%97/id1362548649?mt=8">NOMO相机</a>里，135 Ti是我最喜欢的。</p>
+<p>135 Ti相机截图：<br>
+<img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/MuvDy.wO9jIDP0NBcZerd13AjG.wA.cI2fVF6LpTcsI!/r/dGcBAAAAAAAA" alt="shot"><br>
+效果图：</p>
+<p><img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/*UQhTC4zut6EDGByy*oDkOK8Y*IhQeiiIZHu0TAM.Cc!/r/dFIBAAAAAAAA" alt="120101"><br>
+135 Ti的成片可以在右下角显示当前拍摄日期。</p>
+</li>
+<li>
+<p>NOMO PRO会员有专属的导入照片功能，可以将任意照片加上NOMO的胶片风格。</p>
+</li>
+</ul>
+<h4 id="问题">问题</h4>
+<p>2018年10月20日，使用单反相机拍摄的照片，导入电脑后发现拍摄日期是2012-01-01（可能是相机日期设置的问题），右键查看属性，然后手动将修改拍摄时间改成2018年10月20日。</p>
+<p><img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/lXs47hbdGGtSlB4.wYt3yEeJGEaxW9Be9*vGiUzFOD8!/r/dEkBAAAAAAAA" alt=""><br>
+拍摄时间修改完之后，点击保存，照片的修改时间也会发生变化。<br>
+但是，修改了之后，用NOMO相机导入这张照片，发现照片上的时间还是2012-01-01，很明显不对。</p>
+<h4 id="问题解决">问题解决</h4>
+<p>后来借助专业软件来修改EXIF信息，我使用的是<a href="http://www.magicexif.com/">MagicEXIF</a>。<br>
+在MagicEXIF中打开照片，这里有三个时间参数：</p>
+<pre><code class="language-reStructuredText">修改时间
+拍摄时间
+数字化时间
+</code></pre>
+<p>发现<strong>主图像信息</strong>中的修改时间还是2012-01-01。额。<br>
+<img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/zinwmd2EqRLK8dk98XjMkF6uJuAJW2nxw1yx4dUqtnE!/r/dFQBAAAAAAAA" alt=""><br>
+仔细想想，EXIF信息中的修改时间和在照片右键属性中的修改时间是有区别的。</p>
+<p>EXIF信息可以抽象的理解是照片的内部属性，而在右键属性中的修改的内容是照片的外部属性。</p>
+<p>NOMO相机内置的算法抽取的应该就是照片的内部属性，所以修改外部属性是不起作用的。</p>
+<p>好啦！问题找到了，在MagicEXIF中将修改时间改成2018-10-20，然后保存。再次使用NOMO导入照片，Duang，时间显示正常啦。</p>
+<h4 id="最终成片">最终成片</h4>
+<p><img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/aAC9SeXklkpwe0rh2NNFRd47F4XQdiWIpmvR*YZNnkc!/r/dFUAAAAAAAAA" alt=""></p>
+<h5 id="2018-10-20我们迎风环绕洱海一周遇见无数美丽风景时间定格的时刻你才是我最美">2018-10-20，我们迎风环绕洱海一周，遇见无数美丽风景，时间定格的时刻，你才是我最美。</h5>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://leslieeilsel.github.io/tag/c4stoRMHc" class="tag">
+                    life
+                  </a>
+                
+              </div>
+            
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

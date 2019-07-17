@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leslieeilsel.github.io</id>
     <title>Leslie Lau&apos;s Blog</title>
-    <updated>2019-07-16T06:34:37.754Z</updated>
+    <updated>2019-07-17T06:45:32.132Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leslieeilsel.github.io"/>
     <link rel="self" href="https://leslieeilsel.github.io/atom.xml"/>
@@ -16,11 +16,6 @@
         <link href="https://leslieeilsel.github.io/post/why-canary">
         </link>
         <updated>2019-07-16T03:42:54.000Z</updated>
-        <content type="html"><![CDATA[<ul>
-<li>金丝雀对有毒气体比较敏感，所以在19世纪左右，英国的矿井工人下井时常常会带着一只金丝雀，如果井内的有毒气体超标时金丝雀会立刻死亡，因此金丝雀往往会救那些工人一命。</li>
-<li>谷歌取这个名字就是想表达这个意思，因为金丝雀版本更新仅比Chromium慢，因此会常常加入一些chromium的新功能，但是又不太确定这些功能是不是确实好用，因此就取名为金丝雀版，意为试水之意。如果成功就在dev、beta、稳定版本中加入，如果显得鸡肋就会删除</li>
-</ul>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[修改照片EXIF信息]]></title>
@@ -28,42 +23,6 @@
         <link href="https://leslieeilsel.github.io/post/edit-exif-info">
         </link>
         <updated>2018-11-18T08:37:48.000Z</updated>
-        <content type="html"><![CDATA[<h4 id="背景">背景</h4>
-<ul>
-<li>
-<p>不得不说，在众多<a href="https://itunes.apple.com/cn/app/nomo-%E7%9B%B8%E6%9C%BA-%E4%BD%A0%E7%9A%84%E6%8B%8D%E7%AB%8B%E5%BE%97/id1362548649?mt=8">NOMO相机</a>里，135 Ti是我最喜欢的。</p>
-<p>135 Ti相机截图：<br>
-<img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/MuvDy.wO9jIDP0NBcZerd13AjG.wA.cI2fVF6LpTcsI!/r/dGcBAAAAAAAA" alt="shot"><br>
-效果图：</p>
-<p><img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/*UQhTC4zut6EDGByy*oDkOK8Y*IhQeiiIZHu0TAM.Cc!/r/dFIBAAAAAAAA" alt="120101"><br>
-135 Ti的成片可以在右下角显示当前拍摄日期。</p>
-</li>
-<li>
-<p>NOMO PRO会员有专属的导入照片功能，可以将任意照片加上NOMO的胶片风格。</p>
-</li>
-</ul>
-<h4 id="问题">问题</h4>
-<p>2018年10月20日，使用单反相机拍摄的照片，导入电脑后发现拍摄日期是2012-01-01（可能是相机日期设置的问题），右键查看属性，然后手动将修改拍摄时间改成2018年10月20日。</p>
-<p><img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/lXs47hbdGGtSlB4.wYt3yEeJGEaxW9Be9*vGiUzFOD8!/r/dEkBAAAAAAAA" alt=""><br>
-拍摄时间修改完之后，点击保存，照片的修改时间也会发生变化。<br>
-但是，修改了之后，用NOMO相机导入这张照片，发现照片上的时间还是2012-01-01，很明显不对。</p>
-<h4 id="问题解决">问题解决</h4>
-<p>后来借助专业软件来修改EXIF信息，我使用的是<a href="http://www.magicexif.com/">MagicEXIF</a>。<br>
-在MagicEXIF中打开照片，这里有三个时间参数：</p>
-<pre><code class="language-reStructuredText">修改时间
-拍摄时间
-数字化时间
-</code></pre>
-<p>发现<strong>主图像信息</strong>中的修改时间还是2012-01-01。额。<br>
-<img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/zinwmd2EqRLK8dk98XjMkF6uJuAJW2nxw1yx4dUqtnE!/r/dFQBAAAAAAAA" alt=""><br>
-仔细想想，EXIF信息中的修改时间和在照片右键属性中的修改时间是有区别的。</p>
-<p>EXIF信息可以抽象的理解是照片的内部属性，而在右键属性中的修改的内容是照片的外部属性。</p>
-<p>NOMO相机内置的算法抽取的应该就是照片的内部属性，所以修改外部属性是不起作用的。</p>
-<p>好啦！问题找到了，在MagicEXIF中将修改时间改成2018-10-20，然后保存。再次使用NOMO导入照片，Duang，时间显示正常啦。</p>
-<h4 id="最终成片">最终成片</h4>
-<p><img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/aAC9SeXklkpwe0rh2NNFRd47F4XQdiWIpmvR*YZNnkc!/r/dFUAAAAAAAAA" alt=""></p>
-<h5 id="2018-10-20我们迎风环绕洱海一周遇见无数美丽风景时间定格的时刻你才是我最美">2018-10-20，我们迎风环绕洱海一周，遇见无数美丽风景，时间定格的时刻，你才是我最美。</h5>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Windows安装npm及cnpm]]></title>
@@ -71,58 +30,5 @@
         <link href="https://leslieeilsel.github.io/post/windows-install-npm-cnpm">
         </link>
         <updated>2018-11-07T02:48:32.000Z</updated>
-        <content type="html"><![CDATA[<h3 id="工具官网">工具官网</h3>
-<p>Node.js : http://nodejs.cn/<br>
-淘宝NPM: https://npm.taobao.org/</p>
-<h3 id="安装步骤">安装步骤</h3>
-<h4 id="一-安装nodejs">一、安装node.js</h4>
-<ol>
-<li>前往node.js官网下载并安装工具，这里安装路径选到D盘，D:\Program Files\nodejs。<br>
-安装完毕在命令行输入以下命令测试是否安装成功，正确会出现版本号：</li>
-</ol>
-<pre><code class="language-shell">  npm -v
-</code></pre>
-<ol start="2">
-<li>改变原有的环境变量</li>
-</ol>
-<ul>
-<li>我们要先配置npm的全局模块的存放路径以及cache的路径，例如我希望将以上两个文件夹放在NodeJS的主目录下，便在NodeJs下建立&quot;node_global&quot;及&quot;node_cache&quot;两个文件夹，输入以下命令改变npm配置：</li>
-</ul>
-<pre><code class="language-shell">npm config set prefix &quot;D:\Program Files\nodejs\node_global&quot;
-npm config set cache &quot;D:\Program Files\nodejs\node_cache&quot;
-</code></pre>
-<ul>
-<li>
-<p>在系统环境变量添加系统变量NODE_PATH，输入路径D:\Program Files\nodejs\node_global\node_modules，此后所安装的模块都会安装到改路径下 。</p>
-</li>
-<li>
-<p>在命令行输入以下命令试着安装express（注：“-g”这个参数意思是装到global目录下，也就是上面说设置的“D:\Program Files\nodejs\node_global”里面。）</p>
-</li>
-</ul>
-<pre><code class="language-shell">npm install express -g
-</code></pre>
-<p>安装完毕后可以看到.\node_global\node_modules\express 已经有内容。</p>
-<ul>
-<li>在命令行输入node进入编辑模式，输入以下代码测试是否能正常加载模块：</li>
-</ul>
-<pre><code class="language-shell">require('express')
-</code></pre>
-<p>假设成功，可以看到有输出。假设出错，检查NODE_PATH的路径。</p>
-<h4 id="二-安装淘宝npmcnpm">二、安装淘宝npm（cnpm）</h4>
-<ol>
-<li>输入以下命令</li>
-</ol>
-<pre><code class="language-shell">npm install -g cnpm --registry=https://registry.npm.taobao.org
-</code></pre>
-<ol start="2">
-<li>输入cnpm -v输入是否正常，这里肯定会出错。</li>
-</ol>
-<pre><code class="language-shell">cnpm -v
-</code></pre>
-<ol start="3">
-<li>添加系统变量path的内容<br>
-　　因为cnpm会被安装到D:\Program Files\nodejs\node_global下，而系统变量path并未包含该路径。在系统变量path下添加该路径即可正常使用cnpm。</li>
-</ol>
-]]></content>
     </entry>
 </feed>

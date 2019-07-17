@@ -1,175 +1,185 @@
+
 <html>
-<head>
-  <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="robots" content="all,follow">
-<meta name="googlebot" content="index,follow,snippet,archive">
-<title>Windows安装npm及cnpm | Leslie Lau&#39;s Blog</title>
-<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1563257687023">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="https://leslieeilsel.github.io/styles/main.css" type='text/css' media='all'>
+  <head lang="zh">
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+        <meta content="yes" name="apple-mobile-web-app-capable"/>
+        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+        <meta content="telephone=no" name="format-detection"/>
+        <meta name="renderer" content="webkit">
+    <title>Windows安装npm及cnpm | Leslie Lau&#39;s Blog</title>
+<link href="https://leslieeilsel.github.io/styles/main.css" type="text/css" rel="stylesheet"/>
+<script type="text/javascript" src="https://leslieeilsel.github.io/media/scripts/jquery.js"></script>
+<script type="text/javascript" src="https://leslieeilsel.github.io/media/scripts/basic.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
 
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-144014724-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-144014724-1');
+</script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+  </head>
+
+  <body>
+     <div class="header">
+      <div class="logo_title">
+		  
+        <div class="title animated fadeInDown"><img src="https://leslieeilsel.github.io/images/avatar.png?v=1563345925995"/>
+
+          <h1 title="Leslie Lau&#39;s Blog" class="weaklink"><a href="/">Leslie Lau&#39;s Blog</a>
+
+          </h1>
+
+          <div class="navbar weaklink">
+            <div class="normal_nav">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+		
+      <ul class="mixed_site_nav site_nav sm sm-base">
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+
+  </li>
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+
+  </li>
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+
+  </li>
+ 
+
+      </ul>
+
+      <div class="clear clear_nav_inline_end"></div>
+
+    </div>
+
+  </div>
 
 
 
-</head>
-<body class="home blog ct-body standard">
-<div id="overflow-container" class="overflow-container">
-  <a class="skip-content" href="#main">Skip to content</a>
-  <header id="site-header" class="site-header" role="banner">
-    <!-- <div class='top-navigation top-navigation-important'>
-        <div class='container'>
-            <div id="menu-secondary" class="menu-container menu-secondary" role="navigation">
-                <button id="toggle-secondary-navigation" class="toggle-secondary-navigation"><i class="fa fa-plus"></i></button>
-                <div class="menu">
-                    <ul id="menu-secondary-items" class="menu-secondary-items">
-                        
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="https://leslieeilsel.github.io/tag/9VeonMiLQ">拓展</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="https://leslieeilsel.github.io/tag/c4stoRMHc">life</a>
-                        </li>
-                            
-                        
-                            
-                        <li id="menu-item" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item">
-                            <a href="https://leslieeilsel.github.io/tag/tPH6NX_XC">前端</a>
-                        </li>
-                            
-                        
-                    </ul>
-                </div>
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
             </div>
-            <ul class="social-media-icons">
-                
-                    
-                        <li>
-                            <a href="https://github.com/leslieeilsel" data-animate-hover="pulse" class="github" target="_blank">
-                                <i class="fab fa-github" title="github"></i>
-                                <span class="screen-reader-text">github</span>
-                            </a>
-                        </li>
-                    
-                
-                    
-                        <li>
-                            <a href="https://twitter.com/leslieliuxing" data-animate-hover="pulse" class="twitter" target="_blank">
-                                <i class="fab fa-twitter" title="twitter"></i>
-                                <span class="screen-reader-text">twitter</span>
-                            </a>
-                        </li>
-                    
-                
-                    
-                        <li>
-                            <a href="https://weibo.com/5606798716" data-animate-hover="pulse" class="weibo" target="_blank">
-                                <i class="fab fa-weibo" title="weibo"></i>
-                                <span class="screen-reader-text">weibo</span>
-                            </a>
-                        </li>
-                    
-                
-                    
-                
-                    
-                
-                    
-                
-                    
-                        <li>
-                            <a href="1178273431" data-animate-hover="pulse" class="qq" target="_blank">
-                                <i class="fab fa-qq" title="qq"></i>
-                                <span class="screen-reader-text">qq</span>
-                            </a>
-                        </li>
-                    
-                
-                    
-                
-            </ul>
-        </div>
-    </div> -->
 
-    <div class="container">
-        <div id="title-info" class="title-info">
-            <div id='site-title' class='site-title'>
-                <a href="https://leslieeilsel.github.io">  Leslie Lau&#39;s Blog </a>
+            <div class="hamberger"><i class="fa fa-bars"></i>
+<i class="fa fa-times"></i>
+
             </div>
+
+          </div>
+
         </div>
-        <button id="toggle-navigation" class="toggle-navigation">
-            <i class="fa fa-bars"></i>
-        </button>
-        <div id="menu-primary-tracks" class="menu-primary-tracks"></div>
-        <div id="menu-primary" class="menu-container menu-primary" role="navigation">
-            <p class="site-description">念念不忘，必有回响</p>
-            <div class="menu">
-                <ul id="menu-primary-items" class="menu-primary-items">
-                     
-                        
-                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="/">首页</a>
-                            </li>
-                        
-                    
-                        
-                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="/archives">归档</a>
-                            </li>
-                        
-                    
-                        
-                            <li id="menu-item" class='menu-item menu-item-type-post_type menu-item-object-page current-menu-item current_page_item'>
-                                <a href="/tags">标签</a>
-                            </li>
-                        
-                    
-                </ul>
-            </div>
-        </div>
+
+      </div>
+
+      <div class="hidden_nav animated fadeInDown">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+      <ul class="mixed_site_nav site_nav sm sm-base">
+		  
+	
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+
+  </li>
+
+
+
+
+
+      </ul>
+
+      <div class="clear clear_nav_inline_end"></div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+      </div>
+
     </div>
 
 
-</header>
+    <div class="main">
+      <div class="main-inner">
 
 
-  <div id="main" class="main" role="main">
-    <div id="loop-container" class="loop-container">
-      <div class="post type-post status-publish format-standard has-post-thumbnail hentry category-design tag-design tag-standard-2 tag-tagalicious tag-travel entry full-without-featured odd excerpt-1">
-        
-          <div class='featured-image lazy lazy-bg-image' data-background="https://images.unsplash.com/photo-1543966888-7c1dc482a810?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=1381&amp;q=80">
-          </div>
-        
+<div class="content">
 
-        <div class="entry-meta">
-          <span class="date">2018-11-07</span> <span> | </span>
-          <span class="author">
-            <a href="https://leslieeilsel.github.io" title="" rel="author"> Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></a>
-          </span>
-          
-            <span class="category">
-                    <span> |</span>
-                    <a href="https://leslieeilsel.github.io/tag/tPH6NX_XC">前端</a>
-                </span>
-          
-        </div>
-        <div class='entry-header'>
-          <h1 class='entry-title'>Windows安装npm及cnpm</h1>
-        </div>
-        <div class="entry-container">
-          <div class="entry-content">
-            <article>
-              <h3 id="工具官网">工具官网</h3>
+
+
+
+
+
+  <div class="post_page" >
+
+<div class="post">
+  <div class="post_title sm_margin">
+    <h2><a>Windows安装npm及cnpm</a>
+
+
+
+    </h2>
+  </div>
+
+  <div class="post_details">
+    <div class="info"><i class="fa fa-clock-o"></i>
+<span class="date_info">2018-11-07</span>
+<i class="fa fa-eye"></i>
+
+<span class="date_info"><span id="busuanzi_value_page_pv"></span> Views</span>
+
+
+<i class="fa fa-bookmark-o"></i>
+<span class="tags_info weaklink">
+	
+	<a href="https://leslieeilsel.github.io/tag/tPH6NX_XC" class="tag">前端</a>
+
+
+</span>
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="post_content markdown"><p class="md_block">
+    <span class="md_line md_line_start md_line_end"><h3 id="工具官网">工具官网</h3>
 <p>Node.js : http://nodejs.cn/<br>
 淘宝NPM: https://npm.taobao.org/</p>
 <h3 id="安装步骤">安装步骤</h3>
@@ -221,158 +231,133 @@ npm config set cache &quot;D:\Program Files\nodejs\node_cache&quot;
 <li>添加系统变量path的内容<br>
 　　因为cnpm会被安装到D:\Program Files\nodejs\node_global下，而系统变量path并未包含该路径。在系统变量path下添加该路径即可正常使用cnpm。</li>
 </ol>
+</p>
 
-            </article>
-          </div>
-          <div class='entry-meta-bottom'>
-            <div class="entry-categories">
-              <p>
-                <span>Categories</span>
-                
-                  
-                    
-                  <a href="https://leslieeilsel.github.io/tag/9VeonMiLQ" title="View all posts in 拓展">拓展</a>
-                    
-                    
-                    
-                  <a href="https://leslieeilsel.github.io/tag/c4stoRMHc" title="View all posts in life">life</a>
-                    
-                    
-                    
-                  <a href="https://leslieeilsel.github.io/tag/tPH6NX_XC" title="View all posts in 前端">前端</a>
-                    
-                    
-              </p>
-            </div>
-            <div class="entry-tags">
-              <p><span>Tags</span>
-              </p>
-            </div>
-          </div>
-          <div class="author-meta">
-            <div class="author">
-              <img alt='' src="https://leslieeilsel.github.io/images/avatar.png?v=1563257687023" class='avatar avatar-72 photo' height='72' width='72'>
-              <span>WRITTEN BY: &nbsp;&nbsp;&nbsp;<a href='https://leslieeilsel.github.io'>Leslie Lau</a> </span>
-            </div>
-            <div class="bio">
-              <p>一个头脑混乱的程序仔！</p>
-              
-                
-                  <a class="github" target="_blank"
-                     href="https://github.com/leslieeilsel">
-                    <i class="fab fa-github" title="github"></i>
-                  </a>
-                
-              
-                
-                  <a class="twitter" target="_blank"
-                     href="https://twitter.com/leslieliuxing">
-                    <i class="fab fa-twitter" title="twitter"></i>
-                  </a>
-                
-              
-                
-                  <a class="weibo" target="_blank"
-                     href="https://weibo.com/5606798716">
-                    <i class="fab fa-weibo" title="weibo"></i>
-                  </a>
-                
-              
-                
-              
-                
-              
-                
-              
-                
-                  <a class="qq" target="_blank"
-                     href="1178273431">
-                    <i class="fab fa-qq" title="qq"></i>
-                  </a>
-                
-              
-                
-              
-            </div>
-          </div>
-        </div>
-          
-      </div>
-      <section id="comments" class="comments">
-        
-      </section>
-    </div>
-  </div>
-  <footer id="site-footer" class="site-footer" role="contentinfo">
-    <h1>
-        <a href="https://leslieeilsel.github.io"> Leslie Lau&#39;s Blog </a>
-    </h1>
-    <p class="site-description">念念不忘，必有回响</p>
-    <div id="menu-footer" class="menu-container menu-footer" role="navigation">
-        <div class="menu">
-            <ul id="menu-footer-items" class="menu-footer-items">
-            </ul>
-        </div>
-    </div>
-    <ul class="social-media-icons">
-        
-            
-                <li>
-                    <a href="https://github.com/leslieeilsel" data-animate-hover="pulse" class="github" target="_blank">
-                        <i class="fab fa-github" title="github"></i>
-                        <span class="screen-reader-text">github</span>
-                    </a>
-                </li>
-            
-        
-            
-                <li>
-                    <a href="https://twitter.com/leslieliuxing" data-animate-hover="pulse" class="twitter" target="_blank">
-                        <i class="fab fa-twitter" title="twitter"></i>
-                        <span class="screen-reader-text">twitter</span>
-                    </a>
-                </li>
-            
-        
-            
-                <li>
-                    <a href="https://weibo.com/5606798716" data-animate-hover="pulse" class="weibo" target="_blank">
-                        <i class="fab fa-weibo" title="weibo"></i>
-                        <span class="screen-reader-text">weibo</span>
-                    </a>
-                </li>
-            
-        
-            
-        
-            
-        
-            
-        
-            
-                <li>
-                    <a href="1178273431" data-animate-hover="pulse" class="qq" target="_blank">
-                        <i class="fab fa-qq" title="qq"></i>
-                        <span class="screen-reader-text">qq</span>
-                    </a>
-                </li>
-            
-        
-            
-        
-    </ul>
-    <div class="design-credit">
-        <p>Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a></p>
-    </div>
-</footer>
-<script>
-    hljs.initHighlightingOnLoad()
-</script>
-<script src="https://leslieeilsel.github.io/media/scripts/lib/jquery.min.js"></script>
-<script src="https://leslieeilsel.github.io/media/scripts/lib/jquerymigrate.js"></script>
-<script src="https://leslieeilsel.github.io/media/scripts/lib/production.min.js"></script>
+     <p class="md_block">
+    <div class="reward"><div class="reward-button">赏 <span class="reward-code"> <span class="alipay-code"> <img class="alipay-img" src="https://leslieeilsel.github.io/media/images/alipay.png"><b>支付宝扫码打赏</b> </span> <span class="wechat-code"> <img class="wechat-img" src="https://leslieeilsel.github.io/media/images/wechat.png"><b>微信打赏</b> </span> </span></div></div>
+</p> 
+</div>
 
 </div>
-</body>
-</html>
 
+
+
+<link href="https://leslieeilsel.github.io/styles/main.css" type="text/css" rel="stylesheet"/>
+
+<div class="doc_comments">
+
+</div>
+
+
+
+  </div>
+</div>
+
+
+
+      </div>
+
+
+
+
+    </div>
+
+   <div class="footer">
+<link href="https://leslieeilsel.github.io/styles/main.css" type="text/css" rel="stylesheet"/><div class="site_footer_wrap"><div class="site_footer">
+
+      <div class="mysocials"><div class="my_socials">
+		   
+			   
+    
+			   
+<a href="https://twitter.com/home/leslieliuxing" title="telegram"><i class="fa fa-twitter"></i></a>
+
+    
+			   
+    
+			   
+<a href="https://github.com/leslieeilsel" title="telegram"><i class="fa fa-github"></i></a>
+
+    
+</div><link href="https://leslieeilsel.github.io/styles/main.css" type="text/css" rel="stylesheet"/>
+
+      </div>
+
+      <div class="copyright">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+      </div>
+
+</div></div>
+
+    </div>
+
+
+<style type="text/css">a.back_to_top {
+    text-decoration: none;
+    position: fixed;
+    bottom: 40px;
+    right: 30px;
+    background: #f0f0f0;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    transition-duration: .5s;
+    transition-propety: background-color;
+    display: none;
+}
+
+a.back_to_top span {
+    color: #888;
+}
+
+a.back_to_top:hover {
+    cursor: pointer;
+    background: #dfdfdf;
+}
+
+a.back_to_top:hover span {
+    color: #555;
+}
+
+@media print, screen and (max-width: 580px) {
+    .back_to_top {
+        display: none !important;
+    }
+}
+
+
+
+</style><a id="back_to_top" href="#" class="back_to_top"><span>△</span>
+</a>
+<script type="text/javascript" src="https://leslieeilsel.github.io/media/scripts/jquery.js"></script>
+
+<script>$(document).ready((function(_this) {
+  return function() {
+    var bt;
+    bt = $('#back_to_top');
+    if ($(document).width() > 480) {
+      $(window).scroll(function() {
+        var st;
+        st = $(window).scrollTop();
+        if (st > 30) {
+          return bt.css('display', 'block');
+        } else {
+          return bt.css('display', 'none');
+        }
+      });
+      return bt.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    }
+  };
+})(this));
+</script>
+
+</body>
+
+</html>

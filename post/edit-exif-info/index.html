@@ -1,197 +1,118 @@
 
+<!DOCTYPE html>
 <html>
-  <head lang="zh">
-        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
-        <meta content="yes" name="apple-mobile-web-app-capable"/>
-        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
-        <meta content="telephone=no" name="format-detection"/>
-        <meta name="renderer" content="webkit">
-    <title>修改照片EXIF信息 | Leslie Lau&#39;s Blog</title>
-<link href="https://leslieeilsel.github.io/styles/main.css" type="text/css" rel="stylesheet"/>
-<script type="text/javascript" src="https://leslieeilsel.github.io/media/scripts/jquery.js"></script>
-<script type="text/javascript" src="https://leslieeilsel.github.io/media/scripts/basic.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>修改照片EXIF信息 | Leslie Lau&#39;s Blog</title>
+<meta name="description" content="念念不忘，必有回响">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1563349345521">
+<link rel="stylesheet" href="https://leslieeilsel.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144014724-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+
   gtag('config', 'UA-144014724-1');
 </script>
 
+
   </head>
-
   <body>
-     <div class="header">
-      <div class="logo_title">
-		  
-        <div class="title animated fadeInDown"><img src="https://leslieeilsel.github.io/images/avatar.png?v=1563345925995"/>
-
-          <h1 title="Leslie Lau&#39;s Blog" class="weaklink"><a href="/">Leslie Lau&#39;s Blog</a>
-
-          </h1>
-
-          <div class="navbar weaklink">
-            <div class="normal_nav">
-
-<div class="bitcron_nav_container">
-
-
-  <div class="bitcron_nav">
-    <div class="mixed_site_nav_wrap site_nav_wrap">
-		
-      <ul class="mixed_site_nav site_nav sm sm-base">
- 
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
-
-  </li>
- 
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
-
-  </li>
- 
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
-
-  </li>
- 
-
-      </ul>
-
-      <div class="clear clear_nav_inline_end"></div>
-
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://leslieeilsel.github.io">
+        <img class="avatar" src="https://leslieeilsel.github.io/images/avatar.png?v=1563349345521" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://leslieeilsel.github.io">
+        <h1 class="site-title">Leslie Lau&#39;s Blog</h1>
+      </a>
     </div>
-
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
-
-
-
-  <div class="clear clear_nav_end"></div>
-
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
+
+
+      <div class="content-container">
+        <div class="post-detail">
+          
+            <div class="feature-container" style="background-image: url('https://leslieeilsel.github.io/post-images/edit-exif-info.jpg')">
             </div>
-
-            <div class="hamberger"><i class="fa fa-bars"></i>
-<i class="fa fa-times"></i>
-
-            </div>
-
+          
+          <h2 class="post-title">修改照片EXIF信息</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2018-11-18</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://leslieeilsel.github.io/tag/c4stoRMHc">
+                    life
+                    
+                  </a>
+                
+              </span>
+            
           </div>
-
-        </div>
-
-      </div>
-
-      <div class="hidden_nav animated fadeInDown">
-
-<div class="bitcron_nav_container">
-
-
-  <div class="bitcron_nav">
-    <div class="mixed_site_nav_wrap site_nav_wrap">
-      <ul class="mixed_site_nav site_nav sm sm-base">
-		  
-	
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
-
-  </li>
-
-
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
-
-  </li>
-
-
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
-
-  </li>
-
-
-
-
-
-      </ul>
-
-      <div class="clear clear_nav_inline_end"></div>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="clear clear_nav_end"></div>
-
-</div>
-
-      </div>
-
-    </div>
-
-
-    <div class="main">
-      <div class="main-inner">
-
-
-<div class="content">
-
-
-
-
-
-
-  <div class="post_page" >
-
-<div class="post">
-  <div class="post_title sm_margin">
-    <h2><a>修改照片EXIF信息</a>
-
-
-
-    </h2>
-  </div>
-
-  <div class="post_details">
-    <div class="info"><i class="fa fa-clock-o"></i>
-<span class="date_info">2018-11-18</span>
-<i class="fa fa-eye"></i>
-
-<span class="date_info"><span id="busuanzi_value_page_pv"></span> Views</span>
-
-
-<i class="fa fa-bookmark-o"></i>
-<span class="tags_info weaklink">
-	
-	<a href="https://leslieeilsel.github.io/tag/c4stoRMHc" class="tag">life</a>
-
-
-</span>
-
-
-    </div>
-
-  </div>
-
-
-
-
-
-  <div class="post_content markdown"><p class="md_block">
-    <span class="md_line md_line_start md_line_end"><h4 id="背景">背景</h4>
+          <div class="post-content">
+            <h4 id="背景">背景</h4>
 <ul>
-<li>
-<p>不得不说，在众多<a href="https://itunes.apple.com/cn/app/nomo-%E7%9B%B8%E6%9C%BA-%E4%BD%A0%E7%9A%84%E6%8B%8D%E7%AB%8B%E5%BE%97/id1362548649?mt=8">NOMO相机</a>里，135 Ti是我最喜欢的。</p>
+<li>不得不说，在众多<a href="https://itunes.apple.com/cn/app/nomo-%E7%9B%B8%E6%9C%BA-%E4%BD%A0%E7%9A%84%E6%8B%8D%E7%AB%8B%E5%BE%97/id1362548649?mt=8">NOMO相机</a>里，135 Ti是我最喜欢的。</li>
+</ul>
+<!-- more -->
 <p>135 Ti相机截图：<br>
 <img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/MuvDy.wO9jIDP0NBcZerd13AjG.wA.cI2fVF6LpTcsI!/r/dGcBAAAAAAAA" alt="shot"><br>
 效果图：</p>
 <p><img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/*UQhTC4zut6EDGByy*oDkOK8Y*IhQeiiIZHu0TAM.Cc!/r/dFIBAAAAAAAA" alt="120101"><br>
 135 Ti的成片可以在右下角显示当前拍摄日期。</p>
-</li>
-<li>
-<p>NOMO PRO会员有专属的导入照片功能，可以将任意照片加上NOMO的胶片风格。</p>
-</li>
+<ul>
+<li>NOMO PRO会员有专属的导入照片功能，可以将任意照片加上NOMO的胶片风格。</li>
 </ul>
 <h4 id="问题">问题</h4>
 <p>2018年10月20日，使用单反相机拍摄的照片，导入电脑后发现拍摄日期是2012-01-01（可能是相机日期设置的问题），右键查看属性，然后手动将修改拍摄时间改成2018年10月20日。</p>
@@ -214,133 +135,66 @@
 <h4 id="最终成片">最终成片</h4>
 <p><img src="http://r.photo.store.qq.com/psb?/V12ol6gx2nrILn/aAC9SeXklkpwe0rh2NNFRd47F4XQdiWIpmvR*YZNnkc!/r/dFUAAAAAAAAA" alt=""></p>
 <h5 id="2018-10-20我们迎风环绕洱海一周遇见无数美丽风景时间定格的时刻你才是我最美">2018-10-20，我们迎风环绕洱海一周，遇见无数美丽风景，时间定格的时刻，你才是我最美。</h5>
-</p>
 
-     <p class="md_block">
-    <div class="reward"><div class="reward-button">赏 <span class="reward-code"> <span class="alipay-code"> <img class="alipay-img" src="https://leslieeilsel.github.io/media/images/alipay.png"><b>支付宝扫码打赏</b> </span> <span class="wechat-code"> <img class="wechat-img" src="https://leslieeilsel.github.io/media/images/wechat.png"><b>微信打赏</b> </span> </span></div></div>
-</p> 
-</div>
+          </div>
+        </div>
 
-</div>
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://leslieeilsel.github.io/post/windows-install-npm-cnpm">
+              <h3 class="post-title">
+                下一篇：Windows安装npm及cnpm
+              </h3>
+            </a>
+          </div>
+          
+      </div>
 
+      
 
-
-<link href="https://leslieeilsel.github.io/styles/main.css" type="text/css" rel="stylesheet"/>
-
-<div class="doc_comments">
-
-</div>
-
-
-
+      <div class="site-footer">
+  <div class="slogan">念念不忘，必有回响</div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/leslieeilsel" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/leslieliuxing" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
 </div>
 
 
-
-      </div>
-
-
-
-
     </div>
+    <script type="application/javascript">
 
-   <div class="footer">
-<link href="https://leslieeilsel.github.io/styles/main.css" type="text/css" rel="stylesheet"/><div class="site_footer_wrap"><div class="site_footer">
+hljs.initHighlightingOnLoad()
 
-      <div class="mysocials"><div class="my_socials">
-		   
-			   
-    
-			   
-<a href="https://twitter.com/home/leslieliuxing" title="telegram"><i class="fa fa-twitter"></i></a>
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-    
-			   
-    
-			   
-<a href="https://github.com/leslieeilsel" title="telegram"><i class="fa fa-github"></i></a>
-
-    
-</div><link href="https://leslieeilsel.github.io/styles/main.css" type="text/css" rel="stylesheet"/>
-
-      </div>
-
-      <div class="copyright">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-      </div>
-
-</div></div>
-
-    </div>
-
-
-<style type="text/css">a.back_to_top {
-    text-decoration: none;
-    position: fixed;
-    bottom: 40px;
-    right: 30px;
-    background: #f0f0f0;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    line-height: 36px;
-    font-size: 18px;
-    text-align: center;
-    transition-duration: .5s;
-    transition-propety: background-color;
-    display: none;
-}
-
-a.back_to_top span {
-    color: #888;
-}
-
-a.back_to_top:hover {
-    cursor: pointer;
-    background: #dfdfdf;
-}
-
-a.back_to_top:hover span {
-    color: #555;
-}
-
-@media print, screen and (max-width: 580px) {
-    .back_to_top {
-        display: none !important;
-    }
-}
-
-
-
-</style><a id="back_to_top" href="#" class="back_to_top"><span>△</span>
-</a>
-<script type="text/javascript" src="https://leslieeilsel.github.io/media/scripts/jquery.js"></script>
-
-<script>$(document).ready((function(_this) {
-  return function() {
-    var bt;
-    bt = $('#back_to_top');
-    if ($(document).width() > 480) {
-      $(window).scroll(function() {
-        var st;
-        st = $(window).scrollTop();
-        if (st > 30) {
-          return bt.css('display', 'block');
-        } else {
-          return bt.css('display', 'none');
-        }
-      });
-      return bt.click(function() {
-        $('body,html').animate({
-          scrollTop: 0
-        }, 800);
-        return false;
-      });
-    }
-  };
-})(this));
 </script>
 
-</body>
 
+
+
+  </body>
 </html>

@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leslieeilsel.github.io</id>
     <title>Leslie Lau&apos;s Blog</title>
-    <updated>2019-07-17T06:45:32.132Z</updated>
+    <updated>2019-07-17T07:46:19.435Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leslieeilsel.github.io"/>
     <link rel="self" href="https://leslieeilsel.github.io/atom.xml"/>
@@ -11,11 +11,19 @@
     <icon>https://leslieeilsel.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, Leslie Lau&apos;s Blog</rights>
     <entry>
-        <title type="html"><![CDATA[为什么叫金丝雀版本]]></title>
+        <title type="html"><![CDATA[为什么叫做金丝雀版本]]></title>
         <id>https://leslieeilsel.github.io/post/why-canary</id>
         <link href="https://leslieeilsel.github.io/post/why-canary">
         </link>
         <updated>2019-07-16T03:42:54.000Z</updated>
+        <summary type="html"><![CDATA[<ul>
+<li>金丝雀对有毒气体比较敏感，所以在19世纪左右，英国的矿井工人下井时常常会带着一只金丝雀，如果井内的有毒气体超标时金丝雀会立刻死亡，因此金丝雀往往会救那些工人一命。</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<ul>
+<li>金丝雀对有毒气体比较敏感，所以在19世纪左右，英国的矿井工人下井时常常会带着一只金丝雀，如果井内的有毒气体超标时金丝雀会立刻死亡，因此金丝雀往往会救那些工人一命。</li>
+</ul>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[修改照片EXIF信息]]></title>
@@ -23,6 +31,16 @@
         <link href="https://leslieeilsel.github.io/post/edit-exif-info">
         </link>
         <updated>2018-11-18T08:37:48.000Z</updated>
+        <summary type="html"><![CDATA[<h4 id="背景">背景</h4>
+<ul>
+<li>不得不说，在众多<a href="https://itunes.apple.com/cn/app/nomo-%E7%9B%B8%E6%9C%BA-%E4%BD%A0%E7%9A%84%E6%8B%8D%E7%AB%8B%E5%BE%97/id1362548649?mt=8">NOMO相机</a>里，135 Ti是我最喜欢的。</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h4 id="背景">背景</h4>
+<ul>
+<li>不得不说，在众多<a href="https://itunes.apple.com/cn/app/nomo-%E7%9B%B8%E6%9C%BA-%E4%BD%A0%E7%9A%84%E6%8B%8D%E7%AB%8B%E5%BE%97/id1362548649?mt=8">NOMO相机</a>里，135 Ti是我最喜欢的。</li>
+</ul>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Windows安装npm及cnpm]]></title>
@@ -30,5 +48,13 @@
         <link href="https://leslieeilsel.github.io/post/windows-install-npm-cnpm">
         </link>
         <updated>2018-11-07T02:48:32.000Z</updated>
+        <summary type="html"><![CDATA[<h3 id="工具官网">工具官网</h3>
+<p>Node.js : http://nodejs.cn/<br>
+淘宝NPM: https://npm.taobao.org/</p>
+]]></summary>
+        <content type="html"><![CDATA[<h3 id="工具官网">工具官网</h3>
+<p>Node.js : http://nodejs.cn/<br>
+淘宝NPM: https://npm.taobao.org/</p>
+]]></content>
     </entry>
 </feed>

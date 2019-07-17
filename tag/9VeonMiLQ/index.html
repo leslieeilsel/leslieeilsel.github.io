@@ -1,297 +1,179 @@
 
+<!DOCTYPE html>
 <html>
-<head lang="zh">
-        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
-        <meta content="yes" name="apple-mobile-web-app-capable"/>
-        <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
-        <meta content="telephone=no" name="format-detection"/>
-        <meta name="renderer" content="webkit">
-    <title>Leslie Lau&#39;s Blog</title>
-<link href="https://leslieeilsel.github.io/styles/main.css" type="text/css" rel="stylesheet"/>
-<script type="text/javascript" src="https://leslieeilsel.github.io/media/scripts/jquery.js"></script>
-<script type="text/javascript" src="https://leslieeilsel.github.io/media/scripts/basic.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
+  <head>
+    
+<meta charset="utf-8" >
+
+<title>拓展 | Leslie Lau&#39;s Blog</title>
+<meta name="description" content="念念不忘，必有回响">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1563349345521">
+<link rel="stylesheet" href="https://leslieeilsel.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144014724-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+
   gtag('config', 'UA-144014724-1');
 </script>
 
+
   </head>
-
   <body>
-    <div class="header">
-      <div class="logo_title">
-		  
-        <div class="title animated fadeInDown"><img src="https://leslieeilsel.github.io/images/avatar.png?v=1563345925995"/>
-
-          <h1 title="Leslie Lau&#39;s Blog" class="weaklink"><a href="/">Leslie Lau&#39;s Blog</a>
-
-          </h1>
-
-          <div class="navbar weaklink">
-            <div class="normal_nav">
-
-<div class="bitcron_nav_container">
-
-
-  <div class="bitcron_nav">
-    <div class="mixed_site_nav_wrap site_nav_wrap">
-		
-      <ul class="mixed_site_nav site_nav sm sm-base">
- 
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
-
-  </li>
- 
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
-
-  </li>
- 
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
-
-  </li>
- 
-
-      </ul>
-
-      <div class="clear clear_nav_inline_end"></div>
-
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://leslieeilsel.github.io">
+        <img class="avatar" src="https://leslieeilsel.github.io/images/avatar.png?v=1563349345521" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://leslieeilsel.github.io">
+        <h1 class="site-title">Leslie Lau&#39;s Blog</h1>
+      </a>
     </div>
-
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
-
-
-
-  <div class="clear clear_nav_end"></div>
-
 </div>
 
-            </div>
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
 
-            <div class="hamberger"><i class="fa fa-bars"></i>
-<i class="fa fa-times"></i>
 
-            </div>
+      <div class="content-container">
 
-          </div>
-
+        <div class="current-tag-container">
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> 拓展
+          </h2> 
         </div>
 
-      </div>
-
-      <div class="hidden_nav animated fadeInDown">
-
-<div class="bitcron_nav_container">
-
-
-  <div class="bitcron_nav">
-    <div class="mixed_site_nav_wrap site_nav_wrap">
-      <ul class="mixed_site_nav site_nav sm sm-base">
-		  
-	
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
-
-  </li>
-
-
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
-
-  </li>
-
-
-  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
-
-  </li>
-
-
-
-
-
-      </ul>
-
-      <div class="clear clear_nav_inline_end"></div>
-
-    </div>
-
-  </div>
-
-
-
-  <div class="clear clear_nav_end"></div>
-
-</div>
+        
+<section class="post-item">
+    <div class="content">
+      <a href="https://leslieeilsel.github.io/post/why-canary">
+        <h2 class="post-title">为什么叫做金丝雀版本</h2>
+      </a>
+      <div class="post-abstract">
+        <ul>
+<li>金丝雀对有毒气体比较敏感，所以在19世纪左右，英国的矿井工人下井时常常会带着一只金丝雀，如果井内的有毒气体超标时金丝雀会立刻死亡，因此金丝雀往往会救那些工人一命。</li>
+</ul>
 
       </div>
-
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-07-16</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://leslieeilsel.github.io/tag/9VeonMiLQ">
+                拓展
+                
+              </a>
+            
+          </span>
+        
+      </div>
     </div>
+    
+      <a href="https://leslieeilsel.github.io/post/why-canary">
+        <div class="feature-container" style="background-image: url('https://leslieeilsel.github.io/post-images/why-canary.png')">
+        </div>
+      </a>
+    
+  </section>
 
 
-    <div class="main">
-      <div class="main-inner">
-
-<div class="content">
-
-
-
-
-
-
-  <div class="post_list" >
-
-	
-<div class="post">
-  <div class="post_title weaklink">
-    <h2><a href="https://leslieeilsel.github.io/post/why-canary" >为什么叫金丝雀版本</a>
-    </h2>
-  </div>
-  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
-  <div class="post_footer">
-    <div class="info weaklink"><i class="fa fa-clock-o"></i>
-<span class="date_info">2019-07-16</span>
-
-<i class="fa fa-bookmark-o"></i>
-	
-<span class="tags_info weaklink">
-	
-	<a href="https://leslieeilsel.github.io/tag/9VeonMiLQ" class="tag">拓展</a>
-
-
-
-</span>
-
-
-    </div>
-
-  </div>
-
-</div>
-	
-	
-
-<div class="paginator pager pagination" >
-	
-
-
-
-    <div style="clear:both;height:0;"></div>
-
-
-  </div>
-
+<div class="pagination-container">
+  
+  
 </div>
 
 
+      </div>
 
+      <div class="site-footer">
+  <div class="slogan">念念不忘，必有回响</div>
+  <div class="social-container">
+    
+      
+        <a href="https://github.com/leslieeilsel" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+      
+    
+      
+        <a href="https://twitter.com/leslieliuxing" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      
+    
+      
+    
+      
+    
+      
+    
   </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
 </div>
 
 
-
-      </div>
-
     </div>
+    <script type="application/javascript">
 
-    <div class="footer">
-<link href="https://leslieeilsel.github.io/styles/main.css" type="text/css" rel="stylesheet"/><div class="site_footer_wrap"><div class="site_footer">
+hljs.initHighlightingOnLoad()
 
-      <div class="mysocials"><div class="my_socials">
-		   
-			   
-    
-			   
-<a href="https://twitter.com/home/leslieliuxing" title="telegram"><i class="fa fa-twitter"></i></a>
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
 
-    
-			   
-    
-			   
-<a href="https://github.com/leslieeilsel" title="telegram"><i class="fa fa-github"></i></a>
-
-    
-</div><link href="https://leslieeilsel.github.io/styles/main.css" type="text/css" rel="stylesheet"/>
-
-      </div>
-
-      <div class="copyright">Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-      </div>
-
-</div></div>
-
-    </div>
-
-
-<style type="text/css">a.back_to_top {
-    text-decoration: none;
-    position: fixed;
-    bottom: 40px;
-    right: 30px;
-    background: #f0f0f0;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    line-height: 36px;
-    font-size: 18px;
-    text-align: center;
-    transition-duration: .5s;
-    transition-propety: background-color;
-    display: none;
-}
-
-a.back_to_top span {
-    color: #888;
-}
-
-a.back_to_top:hover {
-    cursor: pointer;
-    background: #dfdfdf;
-}
-
-a.back_to_top:hover span {
-    color: #555;
-}
-
-@media print, screen and (max-width: 580px) {
-    .back_to_top {
-        display: none !important;
-    }
-}
-
-
-
-</style><a id="back_to_top" href="#" class="back_to_top"><span>△</span>
-</a>
-<script type="text/javascript" src="https://leslieeilsel.github.io/media/scripts/jquery.js"></script>
-
-<script>$(document).ready((function(_this) {
-  return function() {
-    var bt;
-    bt = $('#back_to_top');
-    if ($(document).width() > 480) {
-      $(window).scroll(function() {
-        var st;
-        st = $(window).scrollTop();
-        if (st > 30) {
-          return bt.css('display', 'block');
-        } else {
-          return bt.css('display', 'none');
-        }
-      });
-      return bt.click(function() {
-        $('body,html').animate({
-          scrollTop: 0
-        }, 800);
-        return false;
-      });
-    }
-  };
-})(this));
 </script>
 
-</body>
 
+
+
+  </body>
 </html>

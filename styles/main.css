@@ -2340,3 +2340,7 @@ a.purple-link {
         font-size: 14px;
       }
     
+      .site-header .left .avatar{
+    border-radius: 5px;
+}
+    

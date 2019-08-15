@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1565847593545">
+<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1565858123716">
 <link rel="stylesheet" href="https://leslieeilsel.github.io/styles/main.css">
 
 
@@ -39,7 +39,7 @@
     <div class="left">
       <a href="https://leslieeilsel.github.io">
         <img class="avatar" src="https://leslieeilsel.github.io/post-images/logo.jpg" alt="" width="35px" height="35px" style="border-radius: 17px;">
-        <img class="avatar" src="https://leslieeilsel.github.io/images/avatar.png?v=1565847593545" alt="" width="auto" height="35px">
+        <img class="avatar" src="https://leslieeilsel.github.io/images/avatar.png?v=1565858123716" alt="" width="auto" height="35px">
       </a>
       <!-- <a href="https://leslieeilsel.github.io">
         <h1 class="site-title">念念不忘，必有回响</h1>
@@ -115,13 +115,43 @@ opcache.enable=1
 opcache.enable_cli=1
 </code></pre>
 <p>更多配置项请参考<a href="https://www.php.net/manual/zh/opcache.configuration.php">这里</a></p>
+<h3 id="配置推荐">配置推荐</h3>
+<p>开发模式下推荐，直接禁用opcache扩展更好</p>
+<pre><code class="language-shell">opcache.revalidate_freq=0
+opcache.validate_timestamps=1
+opcache.max_accelerated_files=3000
+opcache.memory_consumption=192
+opcache.interned_strings_buffer=16
+</code></pre>
+<p>多台机器集群模式或者代码更新频繁时推荐，可以兼顾性能，方便代码更新</p>
+<pre><code class="language-shell">opcache.revalidate_freq=300
+opcache.validate_timestamps=1
+opcache.max_accelerated_files=7963
+opcache.memory_consumption=192
+opcache.interned_strings_buffer=16
+</code></pre>
+<p>稳定项目推荐，性能最好</p>
+<pre><code class="language-shell">opcache.revalidate_freq=0
+opcache.validate_timestamps=0
+opcache.max_accelerated_files=7963
+opcache.memory_consumption=192
+opcache.interned_strings_buffer=16
+</code></pre>
 <h3 id="启用">启用</h3>
 <p>配置完成之后，重启服务器生效。</p>
 <h3 id="建议">建议</h3>
 <ol>
 <li>不建议在开发环境开启opcache扩展</li>
-<li>TODO</li>
+<li>opcache扩展和xdebug扩展存在兼容性问题，即使配置了实时监测，xdebug也无法检测到新的变化。以下引用官方一段话</li>
 </ol>
+<pre><code># Xdebug does work together with the Zend Opcache, albeit with reducued or crippled functionality, as Opcache optimises out information that Xdebug could use.
+</code></pre>
+<p>参考链接</p>
+<ul>
+<li><a href="https://blog.csdn.net/weixin_33739523/article/details/89369634">Zend Opcache 的最佳设置</a></li>
+<li><a href="http://www.laruence.com/2015/12/04/3086.html">让PHP7达到最高性能的几个Tips</a></li>
+<li><a href="https://blog.csdn.net/u011250882/article/details/49431053">php中opcache的使用详解</a></li>
+</ul>
 
           </div>
         </div>

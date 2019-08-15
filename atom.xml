@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leslieeilsel.github.io</id>
     <title>念念不忘，必有回响</title>
-    <updated>2019-08-15T05:31:09.810Z</updated>
+    <updated>2019-08-15T05:40:01.448Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leslieeilsel.github.io"/>
     <link rel="self" href="https://leslieeilsel.github.io/atom.xml"/>
@@ -16,6 +16,14 @@
         <link href="https://leslieeilsel.github.io/post/opecache-ext">
         </link>
         <updated>2019-08-15T05:20:30.000Z</updated>
+        <summary type="html"><![CDATA[<h3 id="简介">简介</h3>
+<p>OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是 省去了每次加载和解析 PHP 脚本的开销。<br>
+PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
+]]></summary>
+        <content type="html"><![CDATA[<h3 id="简介">简介</h3>
+<p>OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是 省去了每次加载和解析 PHP 脚本的开销。<br>
+PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[VS Code Remote 远程开发与调试]]></title>

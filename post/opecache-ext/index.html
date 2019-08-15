@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>Windows服务器环境配置 | 念念不忘，必有回响</title>
+<title>Windows环境下，PHP开启opencache扩展 | 念念不忘，必有回响</title>
 <meta name="description" content="念念不忘，必有回响">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -83,36 +83,48 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">Windows服务器环境配置</h2>
+          <h2 class="post-title">Windows环境下，PHP开启opencache扩展</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-07-17</span>
+            <span><i class="icon-calendar-outline"></i> 2019-08-15</span>
+            
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://leslieeilsel.github.io/tag/0aiGbJ8Qy">
+                    PHP
+                    
+                  </a>
+                
+              </span>
             
           </div>
           <div class="post-content">
-            <p>根据以下步骤逐步安装：</p>
-<!-- more -->
-<ul>
-<li>安装 <a href="https://www.google.cn/intl/zh-CN/chrome/">Chrome浏览器</a></li>
-<li>安装 <a href="https://www.7-zip.org/">7-zip</a></li>
-<li>安装 <a href="https://git-scm.com/">Git</a></li>
-<li>安装 Git客户端：<a href="https://desktop.github.com/">GitHub Desktop</a></li>
-<li>安装 <a href="https://code.visualstudio.com/">VS Code</a>编辑器</li>
-<li>安装 <a href="https://nodejs.org">Node.js</a></li>
-<li>安装Yarn，<code>npm install -g yarn</code></li>
-<li>安装 <a href="https://www.php.net/downloads.php">PHP</a></li>
-<li>安装 <a href="https://www.apachelounge.com/download/">Apache</a></li>
-<li>安装 <a href="https://dev.mysql.com/downloads/mysql/5.7.html#downloads">Mysql5.7</a></li>
-<li>安装 Navicate 12</li>
-</ul>
+            <pre><code class="language-shell"># 打开php.ini
+
+# 添加一行
+zend_extension=E:\php-7.2.8-ts\ext\php_opcache.dll
+# 如果需要将 Xdebug 扩展和 OPcache 一起使用，必须在 Xdebug 扩展之前加载 OPcache 扩展。
+
+# 设置以下选项
+opcache.enable=1
+opcache.enable_cli=1
+</code></pre>
+<p>更多配置项请参考<a href="https://www.php.net/manual/zh/opcache.configuration.php">这里</a></p>
+<p>配置完成之后，重启服务器生效。</p>
+<p>建议：</p>
+<ol>
+<li>不建议在开发环境开启opcache扩展</li>
+<li>TODO</li>
+</ol>
 
           </div>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://leslieeilsel.github.io/post/why-canary">
+            <a class="purple-link" href="https://leslieeilsel.github.io/post/vscode-remote-yuan-cheng-kai-fa-yu-diao-shi">
               <h3 class="post-title">
-                下一篇：为什么叫做金丝雀版本
+                下一篇：VS Code Remote 远程开发与调试
               </h3>
             </a>
           </div>

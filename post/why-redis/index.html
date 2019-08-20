@@ -1,9 +1,11 @@
+
+<!DOCTYPE html>
 <html>
   <head>
     
 <meta charset="utf-8" >
 
-<title>念念不忘，必有回响</title>
+<title>什么时候使用Redis？ | 念念不忘，必有回响</title>
 <meta name="description" content="念念不忘，必有回响">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -78,25 +80,56 @@
 </transition>
 
 
-        <div class="content-container">
+      <div class="content-container">
+        <div class="post-detail">
           
-          <div class="tags-container">
+          <h2 class="post-title">什么时候使用Redis？</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-08-20</span>
             
-              <a class="tag" href="https://leslieeilsel.github.io/tag/dm7ngTu_D">数据库</a>
-            
-              <a class="tag" href="https://leslieeilsel.github.io/tag/0aiGbJ8Qy">PHP</a>
-            
-              <a class="tag" href="https://leslieeilsel.github.io/tag/9VeonMiLQ">拓展</a>
-            
-              <a class="tag" href="https://leslieeilsel.github.io/tag/c4stoRMHc">life</a>
-            
-              <a class="tag" href="https://leslieeilsel.github.io/tag/tPH6NX_XC">前端</a>
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://leslieeilsel.github.io/tag/dm7ngTu_D">
+                    数据库
+                    
+                  </a>
+                
+              </span>
             
           </div>
+          <div class="post-content">
+            <h3 id="一-什么数据可以放缓存">一、什么数据可以放缓存</h3>
+<ul>
+<li>不需要实时更新但是又极其消耗数据库的数据。比如网站上商品销售排行榜，这种数据一天统计一次就可以了，用户不会关注其是否是实时的。</li>
+<li>需要实时更新，但是更新频率不高的数据。比如一个用户的订单列表，他肯定希望能够实时看到自己下的订单，但是大部分用户不会频繁下单。</li>
+<li>在某个时刻访问量极大而且更新也很频繁的数据。这种数据有一个很典型的例子就是秒杀，在秒杀那一刻，可能有N倍于平时的流量进来，系统压力会很大。但是这种数据使用的缓存不能和普通缓存一样，这种缓存必须保证不丢失，否则会有大问题。</li>
+</ul>
+<!-- more -->
+<h3 id="二-什么数据不能放缓存">二、什么数据不能放缓存</h3>
+<p>实际上在一个web站点中，大部分数据都是可以缓存的，反而不能使用缓存的是很小一部分。这类数据包括比如涉及到钱、密钥、业务关键性核心数据等。有一个经验之谈就是，如果在设计web系统的时候，发现大部分数据都不能使用缓存，则说明设计或者架构本身出了问题，此时需要考虑设计的合理性了</p>
+<h3 id="三-为什么使用缓存">三、为什么使用缓存</h3>
+<p>举个例子，假如系统中有2千万用户信息，用户信息基本固定，一旦录入很少变动，那么你每次加载所有用户信息时，如果都要请求数据库，数据库编译并执行你的查询语句，这样效率就会低下很多，针对这种信息不经常变动并且数据量<br>
+较大的情况，通常做法，就是把他加入缓存，每次取数前先去判断，如果缓存不为空，那么就从缓存取值，如果为空，再去请求数据库，并将数据加入缓存，这样大大提高系统访问效率。</p>
+<p>原文链接：<a href="https://blog.csdn.net/qq_42809504/article/details/83003587">什么时候使用Redis</a></p>
 
+          </div>
         </div>
 
-        <div class="site-footer">
+        
+          <div class="next-post">
+            <a class="purple-link" href="https://leslieeilsel.github.io/post/opecache-ext">
+              <h3 class="post-title">
+                下一篇：使用Opcache加速你的应用
+              </h3>
+            </a>
+          </div>
+          
+      </div>
+
+      
+
+      <div class="site-footer">
   <div class="slogan">念念不忘，必有回响</div>
   <div class="social-container">
     
@@ -123,8 +156,8 @@
 </div>
 
 
-      </div>
-      <script type="application/javascript">
+    </div>
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
 
@@ -140,6 +173,5 @@ var app = new Vue({
 
 
 
-    </div>
   </body>
 </html>

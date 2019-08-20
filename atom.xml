@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leslieeilsel.github.io</id>
     <title>念念不忘，必有回响</title>
-    <updated>2019-08-15T08:35:55.060Z</updated>
+    <updated>2019-08-20T08:08:09.785Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leslieeilsel.github.io"/>
     <link rel="self" href="https://leslieeilsel.github.io/atom.xml"/>
@@ -11,7 +11,28 @@
     <icon>https://leslieeilsel.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 念念不忘，必有回响</rights>
     <entry>
-        <title type="html"><![CDATA[Windows环境下，PHP开启opencache扩展]]></title>
+        <title type="html"><![CDATA[什么时候使用Redis？]]></title>
+        <id>https://leslieeilsel.github.io/post/why-redis</id>
+        <link href="https://leslieeilsel.github.io/post/why-redis">
+        </link>
+        <updated>2019-08-20T08:01:09.000Z</updated>
+        <summary type="html"><![CDATA[<h3 id="一-什么数据可以放缓存">一、什么数据可以放缓存</h3>
+<ul>
+<li>不需要实时更新但是又极其消耗数据库的数据。比如网站上商品销售排行榜，这种数据一天统计一次就可以了，用户不会关注其是否是实时的。</li>
+<li>需要实时更新，但是更新频率不高的数据。比如一个用户的订单列表，他肯定希望能够实时看到自己下的订单，但是大部分用户不会频繁下单。</li>
+<li>在某个时刻访问量极大而且更新也很频繁的数据。这种数据有一个很典型的例子就是秒杀，在秒杀那一刻，可能有N倍于平时的流量进来，系统压力会很大。但是这种数据使用的缓存不能和普通缓存一样，这种缓存必须保证不丢失，否则会有大问题。</li>
+</ul>
+]]></summary>
+        <content type="html"><![CDATA[<h3 id="一-什么数据可以放缓存">一、什么数据可以放缓存</h3>
+<ul>
+<li>不需要实时更新但是又极其消耗数据库的数据。比如网站上商品销售排行榜，这种数据一天统计一次就可以了，用户不会关注其是否是实时的。</li>
+<li>需要实时更新，但是更新频率不高的数据。比如一个用户的订单列表，他肯定希望能够实时看到自己下的订单，但是大部分用户不会频繁下单。</li>
+<li>在某个时刻访问量极大而且更新也很频繁的数据。这种数据有一个很典型的例子就是秒杀，在秒杀那一刻，可能有N倍于平时的流量进来，系统压力会很大。但是这种数据使用的缓存不能和普通缓存一样，这种缓存必须保证不丢失，否则会有大问题。</li>
+</ul>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[使用Opcache加速你的应用]]></title>
         <id>https://leslieeilsel.github.io/post/opecache-ext</id>
         <link href="https://leslieeilsel.github.io/post/opecache-ext">
         </link>

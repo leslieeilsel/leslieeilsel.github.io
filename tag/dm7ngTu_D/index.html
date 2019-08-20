@@ -1,9 +1,11 @@
+
+<!DOCTYPE html>
 <html>
   <head>
     
 <meta charset="utf-8" >
 
-<title>念念不忘，必有回响</title>
+<title>数据库 | 念念不忘，必有回响</title>
 <meta name="description" content="念念不忘，必有回响">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -78,25 +80,57 @@
 </transition>
 
 
-        <div class="content-container">
-          
-          <div class="tags-container">
-            
-              <a class="tag" href="https://leslieeilsel.github.io/tag/dm7ngTu_D">数据库</a>
-            
-              <a class="tag" href="https://leslieeilsel.github.io/tag/0aiGbJ8Qy">PHP</a>
-            
-              <a class="tag" href="https://leslieeilsel.github.io/tag/9VeonMiLQ">拓展</a>
-            
-              <a class="tag" href="https://leslieeilsel.github.io/tag/c4stoRMHc">life</a>
-            
-              <a class="tag" href="https://leslieeilsel.github.io/tag/tPH6NX_XC">前端</a>
-            
-          </div>
+      <div class="content-container">
 
+        <div class="current-tag-container">
+          <h2 class="title">
+            <i class="icon icon-pricetags-outline"></i> 数据库
+          </h2> 
         </div>
 
-        <div class="site-footer">
+        
+<section class="post-item">
+    <div class="content">
+      <a href="https://leslieeilsel.github.io/post/why-redis">
+        <h2 class="post-title">什么时候使用Redis？</h2>
+      </a>
+      <div class="post-abstract">
+        <h3 id="一-什么数据可以放缓存">一、什么数据可以放缓存</h3>
+<ul>
+<li>不需要实时更新但是又极其消耗数据库的数据。比如网站上商品销售排行榜，这种数据一天统计一次就可以了，用户不会关注其是否是实时的。</li>
+<li>需要实时更新，但是更新频率不高的数据。比如一个用户的订单列表，他肯定希望能够实时看到自己下的订单，但是大部分用户不会频繁下单。</li>
+<li>在某个时刻访问量极大而且更新也很频繁的数据。这种数据有一个很典型的例子就是秒杀，在秒杀那一刻，可能有N倍于平时的流量进来，系统压力会很大。但是这种数据使用的缓存不能和普通缓存一样，这种缓存必须保证不丢失，否则会有大问题。</li>
+</ul>
+
+      </div>
+      <div class="post-info">
+        <span><i class="icon icon-calendar-outline"></i> 2019-08-20</span>
+        
+          <span>
+            <i class="icon icon-pricetags-outline"></i>
+            
+              <a href="https://leslieeilsel.github.io/tag/dm7ngTu_D">
+                数据库
+                
+              </a>
+            
+          </span>
+        
+      </div>
+    </div>
+    
+  </section>
+
+
+<div class="pagination-container">
+  
+  
+</div>
+
+
+      </div>
+
+      <div class="site-footer">
   <div class="slogan">念念不忘，必有回响</div>
   <div class="social-container">
     
@@ -123,8 +157,8 @@
 </div>
 
 
-      </div>
-      <script type="application/javascript">
+    </div>
+    <script type="application/javascript">
 
 hljs.initHighlightingOnLoad()
 
@@ -140,6 +174,5 @@ var app = new Vue({
 
 
 
-    </div>
   </body>
 </html>

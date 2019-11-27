@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leslieeilsel.github.io</id>
     <title>念念不忘，必有回响</title>
-    <updated>2019-08-20T08:08:09.785Z</updated>
+    <updated>2019-11-27T08:19:03.536Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leslieeilsel.github.io"/>
     <link rel="self" href="https://leslieeilsel.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://leslieeilsel.github.io/images/avatar.png</logo>
     <icon>https://leslieeilsel.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 念念不忘，必有回响</rights>
+    <entry>
+        <title type="html"><![CDATA[关闭win10内存压缩的方法]]></title>
+        <id>https://leslieeilsel.github.io/post/memory-compression-process-high-usage-windows-10</id>
+        <link href="https://leslieeilsel.github.io/post/memory-compression-process-high-usage-windows-10">
+        </link>
+        <updated>2019-11-27T08:17:50.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[什么时候使用Redis？]]></title>
         <id>https://leslieeilsel.github.io/post/why-redis</id>

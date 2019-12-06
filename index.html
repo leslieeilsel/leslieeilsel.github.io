@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1575598464430">
+<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1575598879613">
 <link rel="stylesheet" href="https://leslieeilsel.github.io/styles/main.css">
 
 
@@ -38,7 +38,7 @@
     <div class="left">
       <a href="https://leslieeilsel.github.io">
         <img class="avatar" src="https://leslieeilsel.github.io/post-images/logo.jpg" alt="" width="35px" height="35px" style="border-radius: 17px;">
-        <img class="avatar" src="https://leslieeilsel.github.io/images/avatar.png?v=1575598464430" alt="" width="auto" height="35px">
+        <img class="avatar" src="https://leslieeilsel.github.io/images/avatar.png?v=1575598879613" alt="" width="auto" height="35px">
       </a>
       <!-- <a href="https://leslieeilsel.github.io">
         <h1 class="site-title">念念不忘，必有回响</h1>
@@ -130,13 +130,7 @@
         <h2 class="post-title">什么时候使用Redis？</h2>
       </a>
       <div class="post-abstract">
-        <h3 id="一-什么数据可以放缓存">一、什么数据可以放缓存</h3>
-<ul>
-<li>不需要实时更新但是又极其消耗数据库的数据。比如网站上商品销售排行榜，这种数据一天统计一次就可以了，用户不会关注其是否是实时的。</li>
-<li>需要实时更新，但是更新频率不高的数据。比如一个用户的订单列表，他肯定希望能够实时看到自己下的订单，但是大部分用户不会频繁下单。</li>
-<li>在某个时刻访问量极大而且更新也很频繁的数据。这种数据有一个很典型的例子就是秒杀，在秒杀那一刻，可能有N倍于平时的流量进来，系统压力会很大。但是这种数据使用的缓存不能和普通缓存一样，这种缓存必须保证不丢失，否则会有大问题。</li>
-</ul>
-
+        
       </div>
       <div class="post-info">
         <span><i class="icon icon-calendar-outline"></i> 2019-08-20</span>
@@ -162,10 +156,7 @@
         <h2 class="post-title">使用Opcache加速你的应用</h2>
       </a>
       <div class="post-abstract">
-        <h3 id="简介">简介</h3>
-<p>OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是 省去了每次加载和解析 PHP 脚本的开销。<br>
-PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
-
+        
       </div>
       <div class="post-info">
         <span><i class="icon icon-calendar-outline"></i> 2019-08-15</span>
@@ -191,8 +182,7 @@ PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
         <h2 class="post-title">VS Code Remote 远程开发与调试</h2>
       </a>
       <div class="post-abstract">
-        <p>最近VS Code发布了远程编程与调试的插件Remote Development，使用这个插件可以在很多情况下代替vim直接远程修改与调试服务器上的代码，同时具备代码高亮与补全功能，就和在本地使用VS Code一样。终于不用在服务器端翻来覆去的配置vim插件了。</p>
-
+        
       </div>
       <div class="post-info">
         <span><i class="icon icon-calendar-outline"></i> 2019-07-23</span>
@@ -208,8 +198,7 @@ PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
         <h2 class="post-title">Windows服务器环境配置</h2>
       </a>
       <div class="post-abstract">
-        <p>根据以下步骤逐步安装：</p>
-
+        
       </div>
       <div class="post-info">
         <span><i class="icon icon-calendar-outline"></i> 2019-07-17</span>
@@ -225,10 +214,7 @@ PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
         <h2 class="post-title">为什么叫做金丝雀版本</h2>
       </a>
       <div class="post-abstract">
-        <ul>
-<li>金丝雀对有毒气体比较敏感，所以在19世纪左右，英国的矿井工人下井时常常会带着一只金丝雀，如果井内的有毒气体超标时金丝雀会立刻死亡，因此金丝雀往往会救那些工人一命。</li>
-</ul>
-
+        
       </div>
       <div class="post-info">
         <span><i class="icon icon-calendar-outline"></i> 2019-07-16</span>
@@ -254,11 +240,7 @@ PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
         <h2 class="post-title">修改照片EXIF信息</h2>
       </a>
       <div class="post-abstract">
-        <h4 id="背景">背景</h4>
-<ul>
-<li>不得不说，在众多<a href="https://itunes.apple.com/cn/app/nomo-%E7%9B%B8%E6%9C%BA-%E4%BD%A0%E7%9A%84%E6%8B%8D%E7%AB%8B%E5%BE%97/id1362548649?mt=8">NOMO相机</a>里，135 Ti是我最喜欢的。</li>
-</ul>
-
+        
       </div>
       <div class="post-info">
         <span><i class="icon icon-calendar-outline"></i> 2018-11-18</span>
@@ -284,10 +266,7 @@ PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
         <h2 class="post-title">Windows安装npm及cnpm</h2>
       </a>
       <div class="post-abstract">
-        <h3 id="工具官网">工具官网</h3>
-<p>Node.js : http://nodejs.cn/<br>
-淘宝NPM: https://npm.taobao.org/</p>
-
+        
       </div>
       <div class="post-info">
         <span><i class="icon icon-calendar-outline"></i> 2018-11-07</span>

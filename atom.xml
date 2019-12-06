@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leslieeilsel.github.io</id>
     <title>念念不忘，必有回响</title>
-    <updated>2019-12-06T02:15:21.994Z</updated>
+    <updated>2019-12-06T02:22:49.095Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leslieeilsel.github.io"/>
     <link rel="self" href="https://leslieeilsel.github.io/atom.xml"/>
@@ -30,20 +30,6 @@
         <link href="https://leslieeilsel.github.io/post/why-redis">
         </link>
         <updated>2019-08-20T08:01:09.000Z</updated>
-        <summary type="html"><![CDATA[<h3 id="一-什么数据可以放缓存">一、什么数据可以放缓存</h3>
-<ul>
-<li>不需要实时更新但是又极其消耗数据库的数据。比如网站上商品销售排行榜，这种数据一天统计一次就可以了，用户不会关注其是否是实时的。</li>
-<li>需要实时更新，但是更新频率不高的数据。比如一个用户的订单列表，他肯定希望能够实时看到自己下的订单，但是大部分用户不会频繁下单。</li>
-<li>在某个时刻访问量极大而且更新也很频繁的数据。这种数据有一个很典型的例子就是秒杀，在秒杀那一刻，可能有N倍于平时的流量进来，系统压力会很大。但是这种数据使用的缓存不能和普通缓存一样，这种缓存必须保证不丢失，否则会有大问题。</li>
-</ul>
-]]></summary>
-        <content type="html"><![CDATA[<h3 id="一-什么数据可以放缓存">一、什么数据可以放缓存</h3>
-<ul>
-<li>不需要实时更新但是又极其消耗数据库的数据。比如网站上商品销售排行榜，这种数据一天统计一次就可以了，用户不会关注其是否是实时的。</li>
-<li>需要实时更新，但是更新频率不高的数据。比如一个用户的订单列表，他肯定希望能够实时看到自己下的订单，但是大部分用户不会频繁下单。</li>
-<li>在某个时刻访问量极大而且更新也很频繁的数据。这种数据有一个很典型的例子就是秒杀，在秒杀那一刻，可能有N倍于平时的流量进来，系统压力会很大。但是这种数据使用的缓存不能和普通缓存一样，这种缓存必须保证不丢失，否则会有大问题。</li>
-</ul>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[使用Opcache加速你的应用]]></title>
@@ -51,14 +37,6 @@
         <link href="https://leslieeilsel.github.io/post/opecache-ext">
         </link>
         <updated>2019-08-15T05:20:30.000Z</updated>
-        <summary type="html"><![CDATA[<h3 id="简介">简介</h3>
-<p>OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是 省去了每次加载和解析 PHP 脚本的开销。<br>
-PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
-]]></summary>
-        <content type="html"><![CDATA[<h3 id="简介">简介</h3>
-<p>OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是 省去了每次加载和解析 PHP 脚本的开销。<br>
-PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[VS Code Remote 远程开发与调试]]></title>
@@ -66,10 +44,6 @@ PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
         <link href="https://leslieeilsel.github.io/post/vscode-remote-yuan-cheng-kai-fa-yu-diao-shi">
         </link>
         <updated>2019-07-23T08:23:21.000Z</updated>
-        <summary type="html"><![CDATA[<p>最近VS Code发布了远程编程与调试的插件Remote Development，使用这个插件可以在很多情况下代替vim直接远程修改与调试服务器上的代码，同时具备代码高亮与补全功能，就和在本地使用VS Code一样。终于不用在服务器端翻来覆去的配置vim插件了。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>最近VS Code发布了远程编程与调试的插件Remote Development，使用这个插件可以在很多情况下代替vim直接远程修改与调试服务器上的代码，同时具备代码高亮与补全功能，就和在本地使用VS Code一样。终于不用在服务器端翻来覆去的配置vim插件了。</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Windows服务器环境配置]]></title>
@@ -77,10 +51,6 @@ PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
         <link href="https://leslieeilsel.github.io/post/windows-fu-wu-qi-huan-jing-pei-zhi">
         </link>
         <updated>2019-07-17T07:58:05.000Z</updated>
-        <summary type="html"><![CDATA[<p>根据以下步骤逐步安装：</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>根据以下步骤逐步安装：</p>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[为什么叫做金丝雀版本]]></title>
@@ -88,14 +58,6 @@ PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
         <link href="https://leslieeilsel.github.io/post/why-canary">
         </link>
         <updated>2019-07-16T03:42:54.000Z</updated>
-        <summary type="html"><![CDATA[<ul>
-<li>金丝雀对有毒气体比较敏感，所以在19世纪左右，英国的矿井工人下井时常常会带着一只金丝雀，如果井内的有毒气体超标时金丝雀会立刻死亡，因此金丝雀往往会救那些工人一命。</li>
-</ul>
-]]></summary>
-        <content type="html"><![CDATA[<ul>
-<li>金丝雀对有毒气体比较敏感，所以在19世纪左右，英国的矿井工人下井时常常会带着一只金丝雀，如果井内的有毒气体超标时金丝雀会立刻死亡，因此金丝雀往往会救那些工人一命。</li>
-</ul>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[修改照片EXIF信息]]></title>
@@ -103,16 +65,6 @@ PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
         <link href="https://leslieeilsel.github.io/post/edit-exif-info">
         </link>
         <updated>2018-11-18T08:37:48.000Z</updated>
-        <summary type="html"><![CDATA[<h4 id="背景">背景</h4>
-<ul>
-<li>不得不说，在众多<a href="https://itunes.apple.com/cn/app/nomo-%E7%9B%B8%E6%9C%BA-%E4%BD%A0%E7%9A%84%E6%8B%8D%E7%AB%8B%E5%BE%97/id1362548649?mt=8">NOMO相机</a>里，135 Ti是我最喜欢的。</li>
-</ul>
-]]></summary>
-        <content type="html"><![CDATA[<h4 id="背景">背景</h4>
-<ul>
-<li>不得不说，在众多<a href="https://itunes.apple.com/cn/app/nomo-%E7%9B%B8%E6%9C%BA-%E4%BD%A0%E7%9A%84%E6%8B%8D%E7%AB%8B%E5%BE%97/id1362548649?mt=8">NOMO相机</a>里，135 Ti是我最喜欢的。</li>
-</ul>
-]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Windows安装npm及cnpm]]></title>
@@ -120,13 +72,5 @@ PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
         <link href="https://leslieeilsel.github.io/post/windows-install-npm-cnpm">
         </link>
         <updated>2018-11-07T02:48:32.000Z</updated>
-        <summary type="html"><![CDATA[<h3 id="工具官网">工具官网</h3>
-<p>Node.js : http://nodejs.cn/<br>
-淘宝NPM: https://npm.taobao.org/</p>
-]]></summary>
-        <content type="html"><![CDATA[<h3 id="工具官网">工具官网</h3>
-<p>Node.js : http://nodejs.cn/<br>
-淘宝NPM: https://npm.taobao.org/</p>
-]]></content>
     </entry>
 </feed>

@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1575598464430">
+<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1575598879613">
 <link rel="stylesheet" href="https://leslieeilsel.github.io/styles/main.css">
 
 
@@ -39,7 +39,7 @@
     <div class="left">
       <a href="https://leslieeilsel.github.io">
         <img class="avatar" src="https://leslieeilsel.github.io/post-images/logo.jpg" alt="" width="35px" height="35px" style="border-radius: 17px;">
-        <img class="avatar" src="https://leslieeilsel.github.io/images/avatar.png?v=1575598464430" alt="" width="auto" height="35px">
+        <img class="avatar" src="https://leslieeilsel.github.io/images/avatar.png?v=1575598879613" alt="" width="auto" height="35px">
       </a>
       <!-- <a href="https://leslieeilsel.github.io">
         <h1 class="site-title">念念不忘，必有回响</h1>
@@ -95,13 +95,7 @@
         <h2 class="post-title">什么时候使用Redis？</h2>
       </a>
       <div class="post-abstract">
-        <h3 id="一-什么数据可以放缓存">一、什么数据可以放缓存</h3>
-<ul>
-<li>不需要实时更新但是又极其消耗数据库的数据。比如网站上商品销售排行榜，这种数据一天统计一次就可以了，用户不会关注其是否是实时的。</li>
-<li>需要实时更新，但是更新频率不高的数据。比如一个用户的订单列表，他肯定希望能够实时看到自己下的订单，但是大部分用户不会频繁下单。</li>
-<li>在某个时刻访问量极大而且更新也很频繁的数据。这种数据有一个很典型的例子就是秒杀，在秒杀那一刻，可能有N倍于平时的流量进来，系统压力会很大。但是这种数据使用的缓存不能和普通缓存一样，这种缓存必须保证不丢失，否则会有大问题。</li>
-</ul>
-
+        
       </div>
       <div class="post-info">
         <span><i class="icon icon-calendar-outline"></i> 2019-08-20</span>

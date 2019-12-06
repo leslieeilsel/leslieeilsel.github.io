@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>使用Opcache加速你的应用 | 念念不忘，必有回响</title>
+<title>在Docker部署Laravel项目 | 念念不忘，必有回响</title>
 <meta name="description" content="念念不忘，必有回响">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -83,9 +83,9 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">使用Opcache加速你的应用</h2>
+          <h2 class="post-title">在Docker部署Laravel项目</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-08-15</span>
+            <span><i class="icon-calendar-outline"></i> 2019-12-06</span>
             
               <span>
                 <i class="icon-pricetags-outline"></i>
@@ -99,58 +99,146 @@
             
           </div>
           <div class="post-content">
-            <h3 id="简介">简介</h3>
-<p>OPcache 通过将 PHP 脚本预编译的字节码存储到共享内存中来提升 PHP 的性能， 存储预编译字节码的好处就是 省去了每次加载和解析 PHP 脚本的开销。<br>
-PHP 5.5.0 及后续版本中已经绑定了 OPcache 扩展。</p>
-<!-- more -->
-<h3 id="安装-配置">安装、配置</h3>
-<pre><code class="language-shell"># 打开php.ini
+            <h3 id="安装docker">安装docker</h3>
+<p>https://www.docker.com/</p>
+<h3 id="安装centos7">安装centos7</h3>
+<pre><code class="language-shell"># 添加镜像
+docker pull centos:7
 
-# 添加一行
-zend_extension=E:\php-7.2.8-ts\ext\php_opcache.dll
-# 如果需要将 Xdebug 扩展和 OPcache 一起使用，必须在 Xdebug 扩展之前加载 OPcache 扩展。
+# 查看镜像ID
+docker images
 
-# 设置以下选项
-opcache.enable=1
-opcache.enable_cli=1
+# 启动容器
+docker run -itd --privileged -p 8888:8888 -p 8080:8080 --name=&quot;容器名&quot; 镜像ID /usr/sbin/init
+
+# 例如
+docker run -itd --privileged -p 3307:3307 -p 9006:9006 -p 9005:9005 -p 9004:9004 --name=&quot;akunicom&quot; 4f9bc48cc4ce /usr/sbin/init
 </code></pre>
-<p>更多配置项请参考<a href="https://www.php.net/manual/zh/opcache.configuration.php">这里</a></p>
-<h3 id="配置推荐">配置推荐</h3>
-<p>开发模式下推荐，直接禁用opcache扩展更好</p>
-<pre><code class="language-shell">opcache.revalidate_freq=0
-opcache.validate_timestamps=1
-opcache.max_accelerated_files=3000
-opcache.memory_consumption=192
-opcache.interned_strings_buffer=16
+<h3 id="安装宝塔面板">安装宝塔面板</h3>
+<pre><code class="language-shell"># 查看运行中的容器
+docker ps
+
+# centos进入容器
+docker exec -it 容器ID /bin/bash
+
+# 安装宝塔
+yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh
 </code></pre>
-<p>多台机器集群模式或者代码更新频繁时推荐，可以兼顾性能，方便代码更新</p>
-<pre><code class="language-shell">opcache.revalidate_freq=300
-opcache.validate_timestamps=1
-opcache.max_accelerated_files=7963
-opcache.memory_consumption=192
-opcache.interned_strings_buffer=16
-</code></pre>
-<p>稳定项目推荐，性能最好</p>
-<pre><code class="language-shell">opcache.revalidate_freq=0
-opcache.validate_timestamps=0
-opcache.max_accelerated_files=7963
-opcache.memory_consumption=192
-opcache.interned_strings_buffer=16
-</code></pre>
-<h3 id="启用">启用</h3>
-<p>配置完成之后，重启服务器生效。</p>
-<h3 id="建议">建议</h3>
-<ol>
-<li>不建议在开发环境开启opcache扩展</li>
-<li>opcache扩展和xdebug扩展存在兼容性问题，即使配置了实时监测，xdebug也无法检测到新的变化。以下引用官方一段话</li>
-</ol>
-<pre><code># Xdebug does work together with the Zend Opcache, albeit with reducued or crippled functionality, as Opcache optimises out information that Xdebug could use.
-</code></pre>
-<p>参考链接</p>
+<h3 id="安装lnmp">安装LNMP</h3>
 <ul>
-<li><a href="https://blog.csdn.net/weixin_33739523/article/details/89369634">Zend Opcache 的最佳设置</a></li>
-<li><a href="http://www.laruence.com/2015/12/04/3086.html">让PHP7达到最高性能的几个Tips</a></li>
-<li><a href="https://blog.csdn.net/u011250882/article/details/49431053">php中opcache的使用详解</a></li>
+<li>安装完之后将<code>MySQL</code>，<code>NGINX</code>，<code>PHP</code>更新至最新版本</li>
+<li>安装PHP扩展，<code>fileinfo</code>，<code>opcache</code></li>
+</ul>
+<h3 id="安装nodejs">安装nodejs</h3>
+<pre><code class="language-shell"># 安装nodejs
+
+# 前往官网查看最新版本，如12.13.1
+# 下载官方安装包
+wget -c https://nodejs.org/dist/v12.13.1/node-v12.13.1-linux-x64.tar.xz
+
+# 解压缩
+tar -xvf node-v12.13.1-linux-x64.tar.xz
+
+# 重命名
+mv node-v12.13.1-linux-x64 nodejs
+
+# 创建连接 放在 /usr/local/bin 文件夹下
+ln -s {安装目录}/nodejs/bin/node /usr/local/bin/node
+ln -s {安装目录}/nodejs/bin/npm /usr/local/bin/npm
+
+# 查看版本
+node -v
+npm -v
+</code></pre>
+<pre><code class="language-shell"># 安装yarn
+npm install yarn -g
+# 创建链接
+ln -s /www/server/nodejs/bin/yarn /usr/local/bin/yarn
+# 查看版本
+yarn -v
+</code></pre>
+<pre><code class="language-shell"># 安装cnpm
+npm install -g cnpm --registry=https://registry.npm.taobao.org
+# 创建链接
+ln -s /www/server/nodejs/bin/cnpm /usr/local/bin/cnpm
+# 查看版本
+cnpm -v
+</code></pre>
+<pre><code class="language-shell">删除安装包
+rm node-v12.13.1-linux-x64.tar.xz
+</code></pre>
+<h3 id="重装git">重装Git</h3>
+<pre><code class="language-shell"># 移除已有Git
+yum remove git
+
+# 安装依赖
+sudo yum groupinstall &quot;Development Tools&quot;
+sudo yum install gettext-devel openssl-devel perl-CPAN perl-devel zlib-devel
+
+# 查看最新版本
+https://github.com/git/git/releases
+
+# 安装最新版本
+wget https://github.com/git/git/archive/v2.24.0.tar.gz
+
+# 解压
+tar xvf v2.24.0.tar.gz
+
+# 进入git文件夹
+cd git-2.24.0
+
+# 构建前检查
+make configure
+./configure --prefix=/usr/local
+
+# 安装
+make install
+</code></pre>
+<h3 id="安装项目">安装项目</h3>
+<pre><code class="language-shell"># 克隆项目
+git clone 项目地址
+
+# 安装前端依赖
+yarn install
+
+# 安装后端依赖
+# 注意：在宝塔PHP的设置中删除以下禁用函数，putenv，proc_open，symlink
+composer install
+
+# 生成加密key
+php artisan key:generate
+# 生成jwt加密key
+php artisan jwt:secret
+
+# 设置storage目录权限
+chmod -R 777 storage
+chmod -R 777 bootstrap/cache
+
+# 创建软连接
+php artisan storage:link
+
+# 打包项目
+npm run prod
+</code></pre>
+<h3 id="faq">FAQ：</h3>
+<ul>
+<li>
+<p>宝塔面板端口号忘记了怎么办</p>
+<pre><code class="language-shell"># 修改port.pl中的端口
+vi /www/server/panel/data/port.pl
+
+# 重启面板
+/etc/init.d/bt restart
+</code></pre>
+</li>
+<li>
+<p>宝塔 nginx 404<br>
+修改站点配置，配置伪静态为laravel5</p>
+</li>
+<li>
+<p>Win10 docker 重新分配了内存之后, 容器无法启动<br>
+这是windows下 docker 没有完全清理环境导致的, 重启解决</p>
+</li>
 </ul>
 
           </div>
@@ -158,9 +246,9 @@ opcache.interned_strings_buffer=16
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://leslieeilsel.github.io/post/vscode-remote-yuan-cheng-kai-fa-yu-diao-shi">
+            <a class="purple-link" href="https://leslieeilsel.github.io/post/memory-compression-process-high-usage-windows-10">
               <h3 class="post-title">
-                下一篇：VS Code Remote 远程开发与调试
+                下一篇：关闭win10内存压缩的方法
               </h3>
             </a>
           </div>

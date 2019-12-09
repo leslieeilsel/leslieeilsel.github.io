@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1575598879613">
+<link rel="shortcut icon" href="https://leslieeilsel.github.io/favicon.ico?v=1575872564578">
 <link rel="stylesheet" href="https://leslieeilsel.github.io/styles/main.css">
 
 
@@ -39,7 +39,7 @@
     <div class="left">
       <a href="https://leslieeilsel.github.io">
         <img class="avatar" src="https://leslieeilsel.github.io/post-images/logo.jpg" alt="" width="35px" height="35px" style="border-radius: 17px;">
-        <img class="avatar" src="https://leslieeilsel.github.io/images/avatar.png?v=1575598879613" alt="" width="auto" height="35px">
+        <img class="avatar" src="https://leslieeilsel.github.io/images/avatar.png?v=1575872564578" alt="" width="auto" height="35px">
       </a>
       <!-- <a href="https://leslieeilsel.github.io">
         <h1 class="site-title">念念不忘，必有回响</h1>
@@ -99,10 +99,11 @@
             
           </div>
           <div class="post-content">
-            <h3 id="安装docker">安装docker</h3>
+            <h1 id="在docker部署laravel项目">在Docker部署Laravel项目</h1>
+<h3 id="安装docker">安装docker</h3>
 <p>https://www.docker.com/</p>
 <h3 id="安装centos7">安装centos7</h3>
-<pre><code class="language-shell"># 添加镜像
+<pre><code class="language-shell"># 添加centos镜像
 docker pull centos:7
 
 # 查看镜像ID
@@ -111,9 +112,47 @@ docker images
 # 启动容器
 docker run -itd --privileged -p 8888:8888 -p 8080:8080 --name=&quot;容器名&quot; 镜像ID /usr/sbin/init
 
+docker run -d -p 9000:9000 --restart=always -v /var/run/docker.sock:/var/run/docker.sock --name prtainer-demo portainer/portainer
+
 # 例如
-docker run -itd --privileged -p 3307:3307 -p 9006:9006 -p 9005:9005 -p 9004:9004 --name=&quot;akunicom&quot; 4f9bc48cc4ce /usr/sbin/init
+docker run -it --privileged=true  -p 3306:3306 -p 9001:9001  --name=&quot;akunicom-rnunner&quot; -v /mdata/akunicom/public:/www/wwwroot/tip/storage/app/public 0c9b6d692e17501 /bin/bash
 </code></pre>
+<h4 id="docker-run-常用参数说明">docker run 常用参数说明</h4>
+<ul>
+<li>
+<p><code>-p</code>，指定端口映射</p>
+<pre><code class="language-shell">docker run -p 宿主机端口:容器内端口 -p 宿主机端口:容器内端口 ...
+</code></pre>
+</li>
+<li>
+<p><code>-i</code>，用于控制台交互</p>
+</li>
+<li>
+<p><code>-t</code>，可以支持终端登录</p>
+</li>
+<li>
+<p><code>-d</code>，指定容器在后台运行</p>
+</li>
+<li>
+<p><code>--privileged</code>，指定容器是否为特权容器，特权容器拥有所有的capabilities</p>
+</li>
+<li>
+<p><code>--restart=&quot;no&quot;</code>， 指定容器停止后的重启策略</p>
+<ul>
+<li>no：容器退出时不重启</li>
+<li>on-failure：容器故障退出（返回值非零）时重启</li>
+<li>always：容器退出时总是重启</li>
+</ul>
+</li>
+<li>
+<p><code>--name=&quot;容器名称&quot;</code>，指定容器名称</p>
+</li>
+<li>
+<p><code>-v, --volume=[]</code>， 给容器挂载存储卷，挂载到容器的某个目录</p>
+<pre><code class="language-shell">docker run -v 宿主机目录:/容器内目录 ...
+</code></pre>
+</li>
+</ul>
 <h3 id="安装宝塔面板">安装宝塔面板</h3>
 <pre><code class="language-shell"># 查看运行中的容器
 docker ps
@@ -143,8 +182,8 @@ tar -xvf node-v12.13.1-linux-x64.tar.xz
 mv node-v12.13.1-linux-x64 nodejs
 
 # 创建连接 放在 /usr/local/bin 文件夹下
-ln -s {安装目录}/nodejs/bin/node /usr/local/bin/node
-ln -s {安装目录}/nodejs/bin/npm /usr/local/bin/npm
+ln -s 安装目录/nodejs/bin/node /usr/local/bin/node
+ln -s 安装目录/nodejs/bin/npm /usr/local/bin/npm
 
 # 查看版本
 node -v
@@ -152,19 +191,23 @@ npm -v
 </code></pre>
 <pre><code class="language-shell"># 安装yarn
 npm install yarn -g
+
 # 创建链接
 ln -s /www/server/nodejs/bin/yarn /usr/local/bin/yarn
+
 # 查看版本
 yarn -v
 </code></pre>
 <pre><code class="language-shell"># 安装cnpm
 npm install -g cnpm --registry=https://registry.npm.taobao.org
+
 # 创建链接
 ln -s /www/server/nodejs/bin/cnpm /usr/local/bin/cnpm
+
 # 查看版本
 cnpm -v
 </code></pre>
-<pre><code class="language-shell">删除安装包
+<pre><code class="language-shell"># 删除安装包
 rm node-v12.13.1-linux-x64.tar.xz
 </code></pre>
 <h3 id="重装git">重装Git</h3>
@@ -203,10 +246,13 @@ yarn install
 
 # 安装后端依赖
 # 注意：在宝塔PHP的设置中删除以下禁用函数，putenv，proc_open，symlink
+# 设置composer阿里镜像
+composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 composer install
 
 # 生成加密key
 php artisan key:generate
+
 # 生成jwt加密key
 php artisan jwt:secret
 
@@ -238,6 +284,27 @@ vi /www/server/panel/data/port.pl
 <li>
 <p>Win10 docker 重新分配了内存之后, 容器无法启动<br>
 这是windows下 docker 没有完全清理环境导致的, 重启解决</p>
+</li>
+</ul>
+<h3 id="监控">监控</h3>
+<ul>
+<li>
+<p>安装软件</p>
+<pre><code class="language-shell"># 安装Prometheus
+docker pull prom/prometheus
+docker run --rm -d -p 9090:9090/tcp prom/prometheus:latest
+
+# 安装node_exporter
+docker pull prom/node-exporter
+docker run --rm -d -p 9100:9100/tcp prom/node-exporter:latest
+
+# 安装Grafana，请参阅文档（https://grafana.com/docs/grafana/latest/installation/docker/）
+docker pull grafana/grafana
+docker run --rm -d --name=grafana -p 3000:3000 grafana/grafana
+</code></pre>
+</li>
+<li>
+<p>配置</p>
 </li>
 </ul>
 

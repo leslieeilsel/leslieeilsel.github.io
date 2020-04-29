@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>拓展 | 念念不忘，必有回响</title>
+<title>如何在Laravel 6 中创建自定义帮助函数？ | 念念不忘，必有回响</title>
 <meta name="description" content="念念不忘，必有回响">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -81,48 +81,80 @@
 
 
       <div class="content-container">
+        <div class="post-detail">
+          
+          <h2 class="post-title">如何在Laravel 6 中创建自定义帮助函数？</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2020-01-02</span>
+            
+          </div>
+          <div class="post-content">
+            <p>我们知道<a href="https://morioh.com/p/edd47d59de1b">Laravel 6</a>还为数组，URL，路由，路径等提供了辅助功能。但是，并非我们需要的所有功能。也许一些基本的辅助功能，例如我们项目中的日期格式。这是很多时间的要求。因此，我认为最好在各处使用相同代码来创建我们的辅助函数。</p>
+<p>因此，让我们使用以下步骤在<strong>Laravel 6中</strong>创建辅助文件。</p>
+<p>现在，如果要在网站或项目目录中添加自定义帮助程序功能，则只需遵循三个步骤即可使用它。</p>
+<h2 id="步骤1建立helpersphp档案"><strong>步骤1：建立helpers.php档案</strong></h2>
+<p>在此步骤中，您需要在laravel项目中创建app / helpers.php，并将以下代码放入该文件中：</p>
+<p>app / helpers.php</p>
+<pre><code class="language-php">&lt;?php
 
-        <div class="current-tag-container">
-          <h2 class="title">
-            <i class="icon icon-pricetags-outline"></i> 拓展
-          </h2> 
+function changeDateFormate($date,$date_format)
+{
+    return \Carbon\Carbon::createFromFormat('Y-m-d', $date)-&gt;format($date_format);    
+}
+
+function productImagePath($image_name)
+{
+    return public_path('images/products/'.$image_name);
+}
+</code></pre>
+<h2 id="步骤2在composerjson文件中添加文件路径"><strong>步骤2：在composer.json文件中添加文件路径</strong></h2>
+<p>在这一步中，您必须放置辅助文件的路径，因此基本上打开composer.json文件并将以下代码放入该文件中：</p>
+<p>composer.json</p>
+<pre><code class="language-json">&quot;autoload&quot;: {
+    &quot;classmap&quot;: [
+        ...
+    ],
+    &quot;psr-4&quot;: {
+        &quot;App\\&quot;: &quot;app/&quot;
+    },
+    &quot;files&quot;: [
+        &quot;app/helpers.php&quot;
+    ]
+},
+</code></pre>
+<p>另请阅读：<a href="https://morioh.com/p/e6c5ca524215">Laravel 6 CRUD应用程序教程</a></p>
+<h2 id="步骤3运行命令"><strong>步骤3：运行命令</strong></h2>
+<p>这是最后一步，您应该只运行以下命令：</p>
+<pre><code>composer dump-autoload
+</code></pre>
+<p>好的，现在您终于可以使用您的自定义帮助程序功能，如changeDateFormate（）和productImagePath（），我将为您提供如何使用自定义帮助程序功能的示例：</p>
+<p><strong>例子1</strong></p>
+<pre><code>$imageName = 'example.png';
+
+$fullpath = productImagePath($imageName);
+
+print_r($fullpath);
+</code></pre>
+<p><strong>例子2</strong></p>
+<pre><code>{{ changeDateFormate(date('Y-m-d'),'m/d/Y')  }}
+</code></pre>
+<p>我希望它可以帮助您...</p>
+
+          </div>
         </div>
 
         
-<section class="post-item">
-    <div class="content">
-      <a href="https://leslieeilsel.github.io/post/why-canary">
-        <h2 class="post-title">为什么叫做金丝雀版本</h2>
-      </a>
-      <div class="post-abstract">
-        
+          <div class="next-post">
+            <a class="purple-link" href="https://leslieeilsel.github.io/post/install-laravel-in-docker">
+              <h3 class="post-title">
+                下一篇：在Docker部署Laravel项目
+              </h3>
+            </a>
+          </div>
+          
       </div>
-      <div class="post-info">
-        <span><i class="icon icon-calendar-outline"></i> 2019-07-16</span>
-        
-          <span>
-            <i class="icon icon-pricetags-outline"></i>
-            
-              <a href="https://leslieeilsel.github.io/tag/9VeonMiLQ">
-                拓展
-                
-              </a>
-            
-          </span>
-        
-      </div>
-    </div>
-    
-  </section>
 
-
-<div class="pagination-container">
-  
-  
-</div>
-
-
-      </div>
+      
 
       <div class="site-footer">
   <div class="slogan">念念不忘，必有回响</div>

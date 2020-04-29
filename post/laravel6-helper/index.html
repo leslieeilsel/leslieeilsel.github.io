@@ -5,7 +5,7 @@
     
 <meta charset="utf-8" >
 
-<title>什么时候使用Redis？ | 念念不忘，必有回响</title>
+<title>如何在Laravel 6 中创建自定义帮助函数？ | 念念不忘，必有回响</title>
 <meta name="description" content="念念不忘，必有回响">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -83,15 +83,22 @@
       <div class="content-container">
         <div class="post-detail">
           
-          <h2 class="post-title">什么时候使用Redis？</h2>
+          <h2 class="post-title">如何在Laravel 6 中创建自定义帮助函数？</h2>
           <div class="post-info post-detail-info">
-            <span><i class="icon-calendar-outline"></i> 2019-08-20</span>
+            <span><i class="icon-calendar-outline"></i> 2020-01-02</span>
             
               <span>
                 <i class="icon-pricetags-outline"></i>
                 
-                  <a href="https://leslieeilsel.github.io/tag/dm7ngTu_D">
-                    数据库
+                  <a href="https://leslieeilsel.github.io/tag/HZTLDWlsF">
+                    laravel
+                    
+                      ，
+                    
+                  </a>
+                
+                  <a href="https://leslieeilsel.github.io/tag/0aiGbJ8Qy">
+                    PHP
                     
                   </a>
                 
@@ -99,27 +106,65 @@
             
           </div>
           <div class="post-content">
-            <h3 id="一-什么数据可以放缓存">一、什么数据可以放缓存</h3>
-<ul>
-<li>不需要实时更新但是又极其消耗数据库的数据。比如网站上商品销售排行榜，这种数据一天统计一次就可以了，用户不会关注其是否是实时的。</li>
-<li>需要实时更新，但是更新频率不高的数据。比如一个用户的订单列表，他肯定希望能够实时看到自己下的订单，但是大部分用户不会频繁下单。</li>
-<li>在某个时刻访问量极大而且更新也很频繁的数据。这种数据有一个很典型的例子就是秒杀，在秒杀那一刻，可能有N倍于平时的流量进来，系统压力会很大。但是这种数据使用的缓存不能和普通缓存一样，这种缓存必须保证不丢失，否则会有大问题。</li>
-</ul>
-<h3 id="二-什么数据不能放缓存">二、什么数据不能放缓存</h3>
-<p>实际上在一个web站点中，大部分数据都是可以缓存的，反而不能使用缓存的是很小一部分。这类数据包括比如涉及到钱、密钥、业务关键性核心数据等。有一个经验之谈就是，如果在设计web系统的时候，发现大部分数据都不能使用缓存，则说明设计或者架构本身出了问题，此时需要考虑设计的合理性了</p>
-<h3 id="三-为什么使用缓存">三、为什么使用缓存</h3>
-<p>举个例子，假如系统中有2千万用户信息，用户信息基本固定，一旦录入很少变动，那么你每次加载所有用户信息时，如果都要请求数据库，数据库编译并执行你的查询语句，这样效率就会低下很多，针对这种信息不经常变动并且数据量<br>
-较大的情况，通常做法，就是把他加入缓存，每次取数前先去判断，如果缓存不为空，那么就从缓存取值，如果为空，再去请求数据库，并将数据加入缓存，这样大大提高系统访问效率。</p>
-<p>原文链接：<a href="https://blog.csdn.net/qq_42809504/article/details/83003587">什么时候使用Redis</a></p>
+            <p>我们知道<a href="https://morioh.com/p/edd47d59de1b">Laravel 6</a>还为数组，URL，路由，路径等提供了辅助功能。但是，并非我们需要的所有功能。也许一些基本的辅助功能，例如我们项目中的日期格式。这是很多时间的要求。因此，我认为最好在各处使用相同代码来创建我们的辅助函数。</p>
+<p>因此，让我们使用以下步骤在<strong>Laravel 6中</strong>创建辅助文件。</p>
+<p>现在，如果要在网站或项目目录中添加自定义帮助程序功能，则只需遵循三个步骤即可使用它。</p>
+<h2 id="步骤1建立helpersphp档案"><strong>步骤1：建立helpers.php档案</strong></h2>
+<p>在此步骤中，您需要在laravel项目中创建app / helpers.php，并将以下代码放入该文件中：</p>
+<p>app / helpers.php</p>
+<pre><code class="language-php">&lt;?php
+
+function changeDateFormate($date,$date_format)
+{
+    return \Carbon\Carbon::createFromFormat('Y-m-d', $date)-&gt;format($date_format);    
+}
+
+function productImagePath($image_name)
+{
+    return public_path('images/products/'.$image_name);
+}
+</code></pre>
+<h2 id="步骤2在composerjson文件中添加文件路径"><strong>步骤2：在composer.json文件中添加文件路径</strong></h2>
+<p>在这一步中，您必须放置辅助文件的路径，因此基本上打开composer.json文件并将以下代码放入该文件中：</p>
+<p>composer.json</p>
+<pre><code class="language-json">&quot;autoload&quot;: {
+    &quot;classmap&quot;: [
+        ...
+    ],
+    &quot;psr-4&quot;: {
+        &quot;App\\&quot;: &quot;app/&quot;
+    },
+    &quot;files&quot;: [
+        &quot;app/helpers.php&quot;
+    ]
+},
+</code></pre>
+<p>另请阅读：<a href="https://morioh.com/p/e6c5ca524215">Laravel 6 CRUD应用程序教程</a></p>
+<h2 id="步骤3运行命令"><strong>步骤3：运行命令</strong></h2>
+<p>这是最后一步，您应该只运行以下命令：</p>
+<pre><code>composer dump-autoload
+</code></pre>
+<p>好的，现在您终于可以使用您的自定义帮助程序功能，如changeDateFormate（）和productImagePath（），我将为您提供如何使用自定义帮助程序功能的示例：</p>
+<p><strong>例子1</strong></p>
+<pre><code>$imageName = 'example.png';
+
+$fullpath = productImagePath($imageName);
+
+print_r($fullpath);
+</code></pre>
+<p><strong>例子2</strong></p>
+<pre><code>{{ changeDateFormate(date('Y-m-d'),'m/d/Y')  }}
+</code></pre>
+<p>我希望它可以帮助您...</p>
 
           </div>
         </div>
 
         
           <div class="next-post">
-            <a class="purple-link" href="https://leslieeilsel.github.io/post/opecache-ext">
+            <a class="purple-link" href="https://leslieeilsel.github.io/post/ru-he-zai-laravel-6-zhong-chuang-jian-zi-ding-yi-bang-zhu-han-shu">
               <h3 class="post-title">
-                下一篇：使用Opcache加速你的应用
+                下一篇：如何在Laravel 6 中创建自定义帮助函数？
               </h3>
             </a>
           </div>

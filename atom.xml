@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leslieeilsel.github.io</id>
     <title>念念不忘，必有回响</title>
-    <updated>2020-04-29T06:26:29.612Z</updated>
+    <updated>2020-07-09T06:52:22.004Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leslieeilsel.github.io"/>
     <link rel="self" href="https://leslieeilsel.github.io/atom.xml"/>
@@ -11,81 +11,73 @@
     <icon>https://leslieeilsel.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 念念不忘，必有回响</rights>
     <entry>
-        <title type="html"><![CDATA[使用 宝塔 部署 Laravel 项目]]></title>
-        <id>https://leslieeilsel.github.io/post/laravel-in-bt</id>
-        <link href="https://leslieeilsel.github.io/post/laravel-in-bt">
+        <title type="html"><![CDATA[使用【宝塔】 部署 Laravel 项目]]></title>
+        <id>https://leslieeilsel.github.io/post/laravel-in-bt/</id>
+        <link href="https://leslieeilsel.github.io/post/laravel-in-bt/">
         </link>
         <updated>2020-04-29T06:21:53.000Z</updated>
-        <summary type="html"><![CDATA[<h3 id="安装宝塔面板">安装宝塔面板</h3>
-<pre><code class="language-shell">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh
-</code></pre>
-]]></summary>
-        <content type="html"><![CDATA[<h3 id="安装宝塔面板">安装宝塔面板</h3>
-<pre><code class="language-shell">yum install -y wget &amp;&amp; wget -O install.sh http://download.bt.cn/install/install_6.0.sh &amp;&amp; sh install.sh
-</code></pre>
-]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[如何在Laravel 6 中创建自定义帮助函数？]]></title>
-        <id>https://leslieeilsel.github.io/post/laravel6-helper</id>
-        <link href="https://leslieeilsel.github.io/post/laravel6-helper">
-        </link>
-        <updated>2020-01-02T08:13:06.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[如何在Laravel 6 中创建自定义帮助函数？]]></title>
-        <id>https://leslieeilsel.github.io/post/ru-he-zai-laravel-6-zhong-chuang-jian-zi-ding-yi-bang-zhu-han-shu</id>
-        <link href="https://leslieeilsel.github.io/post/ru-he-zai-laravel-6-zhong-chuang-jian-zi-ding-yi-bang-zhu-han-shu">
+        <title type="html"><![CDATA[如何在 Laravel 中创建自定义帮助函数？]]></title>
+        <id>https://leslieeilsel.github.io/post/laravel6-helper/</id>
+        <link href="https://leslieeilsel.github.io/post/laravel6-helper/">
         </link>
         <updated>2020-01-02T08:13:06.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[在Docker部署Laravel项目]]></title>
-        <id>https://leslieeilsel.github.io/post/install-laravel-in-docker</id>
-        <link href="https://leslieeilsel.github.io/post/install-laravel-in-docker">
+        <id>https://leslieeilsel.github.io/post/install-laravel-in-docker/</id>
+        <link href="https://leslieeilsel.github.io/post/install-laravel-in-docker/">
         </link>
         <updated>2019-12-06T02:11:37.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[关闭win10内存压缩的方法]]></title>
-        <id>https://leslieeilsel.github.io/post/memory-compression-process-high-usage-windows-10</id>
-        <link href="https://leslieeilsel.github.io/post/memory-compression-process-high-usage-windows-10">
+        <id>https://leslieeilsel.github.io/post/memory-compression-process-high-usage-windows-10/</id>
+        <link href="https://leslieeilsel.github.io/post/memory-compression-process-high-usage-windows-10/">
         </link>
         <updated>2019-11-27T08:17:50.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[什么时候使用Redis？]]></title>
-        <id>https://leslieeilsel.github.io/post/why-redis</id>
-        <link href="https://leslieeilsel.github.io/post/why-redis">
+        <id>https://leslieeilsel.github.io/post/why-redis/</id>
+        <link href="https://leslieeilsel.github.io/post/why-redis/">
         </link>
         <updated>2019-08-20T08:01:09.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[使用Opcache加速你的应用]]></title>
-        <id>https://leslieeilsel.github.io/post/opecache-ext</id>
-        <link href="https://leslieeilsel.github.io/post/opecache-ext">
+        <id>https://leslieeilsel.github.io/post/opecache-ext/</id>
+        <link href="https://leslieeilsel.github.io/post/opecache-ext/">
         </link>
         <updated>2019-08-15T05:20:30.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[VS Code Remote 远程开发与调试]]></title>
-        <id>https://leslieeilsel.github.io/post/vscode-remote-yuan-cheng-kai-fa-yu-diao-shi</id>
-        <link href="https://leslieeilsel.github.io/post/vscode-remote-yuan-cheng-kai-fa-yu-diao-shi">
+        <id>https://leslieeilsel.github.io/post/vscode-remote-yuan-cheng-kai-fa-yu-diao-shi/</id>
+        <link href="https://leslieeilsel.github.io/post/vscode-remote-yuan-cheng-kai-fa-yu-diao-shi/">
         </link>
         <updated>2019-07-23T08:23:21.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Windows服务器环境配置]]></title>
-        <id>https://leslieeilsel.github.io/post/windows-fu-wu-qi-huan-jing-pei-zhi</id>
-        <link href="https://leslieeilsel.github.io/post/windows-fu-wu-qi-huan-jing-pei-zhi">
+        <id>https://leslieeilsel.github.io/post/windows-fu-wu-qi-huan-jing-pei-zhi/</id>
+        <link href="https://leslieeilsel.github.io/post/windows-fu-wu-qi-huan-jing-pei-zhi/">
         </link>
         <updated>2019-07-17T07:58:05.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[为什么叫做金丝雀版本]]></title>
-        <id>https://leslieeilsel.github.io/post/why-canary</id>
-        <link href="https://leslieeilsel.github.io/post/why-canary">
+        <id>https://leslieeilsel.github.io/post/why-canary/</id>
+        <link href="https://leslieeilsel.github.io/post/why-canary/">
         </link>
         <updated>2019-07-16T03:42:54.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[修改照片EXIF信息]]></title>
+        <id>https://leslieeilsel.github.io/post/edit-exif-info/</id>
+        <link href="https://leslieeilsel.github.io/post/edit-exif-info/">
+        </link>
+        <updated>2018-11-18T08:37:48.000Z</updated>
     </entry>
 </feed>
